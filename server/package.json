@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "lint:check": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "start:dev": "nodemon server.js",
+    "start": "set NODE_ENV=PROD && node server.js"
   },
   "keywords": [
     "node",
@@ -17,7 +19,8 @@
     "eslint": "^8.28.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
