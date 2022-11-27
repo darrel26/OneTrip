@@ -16,6 +16,7 @@
         "linebreak-style": ["error", "windows"],
         "eol-last": ["error", "never"],
         "keyword-spacing": ["error", { "before": true, "after": true }],
-        "max-len": [ "error", {"code": 80} ]
+        "max-len": [ "error", {"code": 150} ],
+        "new-cap": ["error", { "newIsCapExceptions": ["model"] }]
     }
 }
