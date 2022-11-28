@@ -11,10 +11,12 @@
         "ecmaVersion": "latest"
     },
     "rules": {
-        "indent": ["error", 4, { "VariableDeclarator": "first" }],
+        "indent": ["error", 4, { "VariableDeclarator": "first", "MemberExpression": 1 }],
         "func-call-spacing": ["error", "never"],
         "linebreak-style": ["error", "windows"],
         "eol-last": ["error", "never"],
-        "keyword-spacing": ["error", { "before": true, "after": true }]
+        "keyword-spacing": ["error", { "before": true, "after": true }],
+        "max-len": [ "error", {"code": 150} ],
+        "new-cap": ["error", { "newIsCapExceptions": ["model"] }]
     }
 }
