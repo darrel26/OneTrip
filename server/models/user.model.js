@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-underscore-dangle */
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
@@ -12,6 +14,10 @@ const userSchema = new mongoose.Schema({
             message: (props) => `${props.value} is not a valid email address`,
         },
     },
+    username: {
+        type: String,
+        required: [true, 'User required an username'],
+    },
     password: {
         type: String,
         required: [true, 'User required a password'],
@@ -23,6 +29,15 @@ const userSchema = new mongoose.Schema({
         },
     ],
 }, { timestamps: true });
+
+userSchema.set('toJSON', {
+    transform: (document, returnedObject) => {
+        returnedObject.id = returnedObject._id.toString();
+        delete returnedObject._id;
+        delete returnedObject.__v;
+        delete returnedObject.password;
+    },
+});
 
 const User = new mongoose.model('User', userSchema);
 
