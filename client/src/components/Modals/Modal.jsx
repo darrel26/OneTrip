@@ -1,4 +1,7 @@
 import React, {useState} from 'react'
+
+import Close from '../../assets/close.svg'
+
 import './Modal.style.css'
 import OneTrip from '../Logo/OneTrip'
 import SectionLogin from './Sections/SectionLogin'
@@ -8,8 +11,11 @@ const Modal = ({setModal, sections}) => {
   const [section,setSection] = useState(sections)
 
   return (
-    <div onClick={() => setModal(false)} className="modal-container">
+    <div className="modal-container">
       <div className="modal-content">
+        <div className='modal-close'>
+          <img onClick={ () => setModal(false)} src={Close} alt="Close button"/>
+        </div>
         <div className='modal-header'>
             <OneTrip/>
         </div>

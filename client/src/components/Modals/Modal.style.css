@@ -22,11 +22,26 @@
     flex-direction: column;
     padding: 25px;
     min-height:450px;
-    justify-content: space-between;
+    justify-content: space-evenly;
+}
+
+.modal-close {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -20px;
+}
+
+.modal-close img {
+    filter: invert(32%) sepia(66%) saturate(542%) hue-rotate(144deg) brightness(89%) contrast(91%);
+    width: 50px;
+    cursor: pointer;
 }
 
 .modal-header{
     display: flex;
     justify-content: center;
+    margin-top: -40px;
 }
+
+
 

@@ -7,8 +7,8 @@ const SectionLogin = ({section}) => {
   return (
     <>
       <div className="modal-body">
-            <label>Email or username</label>
-            <input type="text" ref={login_username_email}  placeholder="email or username"/>
+            <label>Email</label>
+            <input type="text" ref={login_username_email}  placeholder="email"/>
             <label>Password</label>
             <input type="password" ref={login_pass}  placeholder="password"/>
         </div>
