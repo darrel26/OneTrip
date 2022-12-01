@@ -1,0 +1,46 @@
+.modal-body{
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body label{
+    color: #166678;
+    font-weight: 600;
+    font-size: 24;
+    margin:10px;
+}
+
+.modal-body input{
+    border: none;
+    border-bottom: solid 1px #000;
+    outline: none;
+    margin:10px;
+    padding: 0px 0px 8px 2px;
+}
+
+.modal-button-container{
+    display: flex;
+    justify-content: center;
+}
+
+.modal-button-container button{
+    border: none;
+    background-color: #166678;
+    color: #fff;
+    padding: 16px;
+    width: 30%;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 12px 0px 8px 0px;
+}
+
+.modal-footer p{
+    text-align: center;
+}
+
+.modal-footer p span{
+    color: #166678;
+    font-weight: bold;
+    cursor: pointer;
+}

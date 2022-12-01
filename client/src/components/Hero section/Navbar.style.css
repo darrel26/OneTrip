@@ -1,0 +1,42 @@
+.herosection-nav{
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    padding-top: 40px;
+}
+
+
+.herosection-nav h1{
+    cursor: pointer;
+    margin: 24px;
+}
+.herosection-nav h1 span{
+    color: #166678;
+}
+
+.herosection-navbar{
+    display: flex;
+}
+
+.herosection-navbar li{
+    cursor: pointer;
+    margin: 30px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.herosection-user{
+    display: flex;
+}
+
+.herosection-user li{
+    cursor: pointer;
+    margin: 30px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.herosection-user #sign-up{
+    color: #166678;
+}
