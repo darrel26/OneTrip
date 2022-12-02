@@ -5,6 +5,6 @@ const { PORT } = require('./utils/config');
 const server = http.createServer(app);
 
 server.listen(PORT, () => {
-    console.log(process.env.npm_config_dev);
-    console.log(`Server running on port ${PORT}`);
+    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server running in ${process.env.npm_config_env} mode`);
 });

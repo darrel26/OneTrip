@@ -17,6 +17,7 @@
         "eol-last": ["error", "never"],
         "keyword-spacing": ["error", { "before": true, "after": true }],
         "max-len": [ "error", {"code": 150} ],
-        "new-cap": ["error", { "newIsCapExceptions": ["model"] }]
+        "new-cap": ["error", { "newIsCapExceptions": ["model"] }],
+        "no-underscore-dangle": ["error", { "allow":  ["_id"] }]
     }
 }
