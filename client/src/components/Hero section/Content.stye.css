@@ -25,7 +25,7 @@
 }
 
 .herosection-contenttrip{
-    width: 35%;
+    width: 42%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -48,7 +48,7 @@
     width: 24px;
 }
 
-.content-input input{
+.content-input .datepicker{
     height: 50px;
     border: none;
     align-self: center;
@@ -68,6 +68,7 @@
     border: none;
     padding: 16px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .content-button button img{
