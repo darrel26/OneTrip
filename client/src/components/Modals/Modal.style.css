@@ -33,7 +33,7 @@
 
 .modal-close img {
     filter: invert(32%) sepia(66%) saturate(542%) hue-rotate(144deg) brightness(89%) contrast(91%);
-    width: 50px;
+    width: 24px;
     cursor: pointer;
 }
 
