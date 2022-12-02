@@ -23,7 +23,7 @@
     padding: 25px;
     min-height:450px;
     justify-content: space-evenly;
-}
+}s
 
 .modal-close {
     display: flex;
@@ -35,7 +35,7 @@
     filter: invert(32%) sepia(66%) saturate(542%) hue-rotate(144deg) brightness(89%) contrast(91%);
     width: 24px;
     cursor: pointer;
-    padding: 12px 0px 12px 12px;
+    padding: 12px 0px 12px 12px ;
 }
 
 .modal-header{

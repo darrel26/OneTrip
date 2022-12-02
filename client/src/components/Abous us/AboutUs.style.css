@@ -1,0 +1,55 @@
+.aboutus-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7%;
+}
+
+.aboutus-content{
+    display: flex;
+    justify-content: space-between;
+    width: 65%;
+}
+
+.description{
+    width: 60%;
+    margin-right: 9%;
+}
+
+.description h1{
+    font-size: 32px;
+    color: #166678;
+}
+
+.description p{
+    font-size: 16px;
+    color: #79918E;
+    line-height: 1cm;
+}
+
+.description button{
+    background-color: #166678;
+    color: #FFF;
+    width: 150px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
+
+.image-description{
+    width: 50%;
+}
+
+.image-description{
+    width: 50%;
+}
+
+.image-description img{
+    width: 433px;
+    height: 342px;
+    border-radius: 10px;
+}
