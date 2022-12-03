@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Navbar from '../components/Hero section/Navbar'
-import Content from '../components/Hero section/Content'
-import AboutUs from '../components/Abous us/AboutUs'
+import Navbar from '../components/HeroSection/Navbar'
+import Content from '../components/HeroSection/Content'
+import AboutUs from '../components/AboutUs/AboutUs'
 
 import './HomePage.style.css'
 
