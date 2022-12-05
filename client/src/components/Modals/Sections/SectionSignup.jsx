@@ -1,13 +1,27 @@
 import React, {useRef} from 'react'
+import { userSignUp } from '../../../utils/service'
 import './SectionLogin'
 
-const SectionSignup = ({section, email, username, pass, re_pass}) => {
+const SectionSignup = ({section}) => {
   const signup_email = useRef()
   const signup_username = useRef()
   const signup_pass = useRef()
   const signup_re_pass = useRef()
+
+  const handleOnSignUp = async (e) => {
+    e.preventDefault();
+    
+    const newUser = {
+      email: signup_email.current.value,
+      username: signup_username.current.value,
+      password: signup_pass.current.value
+    }
+
+    await userSignUp(newUser);
+  }
+
   return (
-    <>
+    <form onSubmit={handleOnSignUp}>
       <div className="modal-body">
             <label>Email</label>
             <input type="text" ref={signup_email} placeholder="email"/>
@@ -26,7 +40,7 @@ const SectionSignup = ({section, email, username, pass, re_pass}) => {
             section('login')
           }}>Login Here</span></p>
       </div>
-    </>
+    </form>
   )
 }
 
