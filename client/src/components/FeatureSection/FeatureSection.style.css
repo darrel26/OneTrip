@@ -1,0 +1,17 @@
+.feature-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center
+}
+
+
+.feature-content{
+    display: flex;
+    justify-content: space-between ;
+    margin-top: 7%;
+    margin-right: 2%;
+}
+
+.feature-content img{
+    width: 390px;
+}

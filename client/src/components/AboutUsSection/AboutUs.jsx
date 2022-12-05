@@ -1,6 +1,6 @@
 import React from 'react'
 import './AboutUs.style.css'
-import Dummy from '../../assets/dummyBackground-herosection.jpg'
+import AboutUsImage from '../../assets/AboutUs.jpg'
 
 const AboutUs = () => {
   return (
@@ -19,7 +19,7 @@ const AboutUs = () => {
           <button>READ MORE</button>
         </div>
         <div className="image-description">
-          <img src={Dummy} alt="Dummy"/>
+          <img src={AboutUsImage} alt="Dummy"/>
         </div>
       </div>
     </div>
