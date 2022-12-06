@@ -10,7 +10,7 @@
 .aboutus-content{
     display: flex;
     justify-content: space-between;
-    width: 65%;
+    width: 60%;
 }
 
 .description{
@@ -38,6 +38,7 @@
     font-size: 16px;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .image-description{
