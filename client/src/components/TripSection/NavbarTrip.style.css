@@ -1,0 +1,37 @@
+.navbartrip-container{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    box-shadow: 1px 8px 9px 0px rgba(138,134,134,0.79);
+    -webkit-box-shadow: 1px 8px 9px 0px rgba(138,134,134,0.79);
+    -moz-box-shadow: 1px 8px 9px 0px rgba(138,134,134,0.79);
+    border-radius: 2px;
+}
+
+.navbar-logo{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 8%;
+    margin-top: -10px;
+}
+
+#no-decoration{
+    text-decoration: none;
+    color: rgb(32, 31, 31);
+}
+
+.navbar-usericon{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 8%;
+}
+
+.navbar-usericon img{
+    width: 51px;
+}
