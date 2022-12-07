@@ -63,16 +63,21 @@
     border: none;
 }
 
-.content-button button{
-    background-color: #166678;
-    border: none;
-    padding: 16px;
-    border-radius: 10px;
-    cursor: pointer;
+.content-input{
+    display: flex;
 }
 
-.content-button button img{
-    align-self: flex-end;
+.content-button #addTripButton{
+    display: flex;
+    background-color: #166678;
+    padding: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.content-button #addTripButton img{
+    align-self: center;
     width: 30px;
     filter: invert(100%) sepia(92%) saturate(25%) hue-rotate(59deg) brightness(106%) contrast(92%);
 }

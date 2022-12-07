@@ -28,7 +28,7 @@ const SectionSignup = ({section}) => {
             <label>Username</label>
             <input type="text" ref={signup_username} placeholder="username"/>
             <label>Password</label>
-            <input type="text" ref={signup_pass}  placeholder="password"/>
+            <input type="password" ref={signup_pass}  placeholder="password"/>
             <label>Repeat Password</label>
             <input type="password" ref={signup_re_pass}  placeholder="repeat password"/>
         </div>

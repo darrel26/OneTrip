@@ -5,11 +5,13 @@ const OneTrip = () => {
     LogosH1:{
         cursor: "pointer",
     },
-    LogoSpan: "#166678",
+    LogoSpan: {
+        color: "#166678",
+    },
   }
 
   return (
-    <h1 style={style.LogosH1}>One<span>Trip</span></h1>
+    <h1 style={style.LogosH1}>One<span style={style.LogoSpan}>Trip</span></h1>
   )
 }
 
