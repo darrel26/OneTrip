@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 const baseURL = 'http://localhost:3001/api';
 
 const userSignUp = async (newUser) => {
@@ -6,6 +7,6 @@ const userSignUp = async (newUser) => {
     const res = await request;
     console.log(res.data);
     return res.data;
-}
+};
 
 export { userSignUp };
