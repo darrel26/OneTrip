@@ -17,7 +17,7 @@ const SectionSignup = ({section}) => {
       password: signup_pass.current.value
     }
 
-    await userSignUp(newUser);
+    return await userSignUp(newUser);
   }
 
   return (
