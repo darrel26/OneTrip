@@ -1,0 +1,14 @@
+.trippage-maincontainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.trippage-container-left{
+    width: 50%;
+    height: 100vh;
+}
+
+.trippage-container-right{
+    width: 50%;
+    height: 100vh;
+}
