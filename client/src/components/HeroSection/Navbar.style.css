@@ -19,11 +19,13 @@
     display: flex;
 }
 
-.herosection-navbar li{
+.herosection-navbar a{
     cursor: pointer;
     margin: 30px;
     font-size: 18px;
     font-weight: 600;
+    text-decoration: none;
+    color: #000
 }
 
 .herosection-user{

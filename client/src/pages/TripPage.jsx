@@ -3,6 +3,7 @@ import { useJsApiLoader } from "@react-google-maps/api"
 import './TripPage.style.css'
 import GoogleMap from '../components/GoogleMapSection/GoogleMapSection'
 import NavbarTrip from '../components/TripSection/NavbarTrip'
+import EditTrip from '../components/TripSection/EditTrip'
 
 const library = ['places']
 const TripPage = () => {
@@ -20,6 +21,7 @@ const TripPage = () => {
     <div className='trippage-maincontainer'>
       <div className='trippage-container-left'>
         <NavbarTrip/>
+        <EditTrip/>
       </div>
       <div className='trippage-container-right'>
         {isLoaded? <GoogleMap mapCenter={center}/> : loadError}
