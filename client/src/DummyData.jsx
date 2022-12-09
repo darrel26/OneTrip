@@ -1,8 +1,8 @@
 export const placeVisit = 
     {
         tripName : 'Trip to San Fransisco',
-        dateStart: '11-12-2022',
-        dateEnd: ' 14-12-2022',
+        dateStart: '11/25',
+        dateEnd: ' 11/30',
         trip: [
                 {
                 objectId:"1",
@@ -15,6 +15,15 @@ export const placeVisit =
                 placeName : "Glenpark",
                 description: "Glen Park is a residential neighborhood in San Francisco, California, located south of Twin Peaks and adjacent to Glen Canyon Park.",
                 image: "https://s.winoper.com/winoper/Tour-00764171.jpeg"
+                },
+                {
+                objectId:"3",
+                placeName : "Bandung",
+                description: "Bandung, is a city in Indonesia and the capital of West Java province, one of the cities that often becomes a city for tourists because of its natural beauty.",
+                image: "https://assets.promediateknologi.com/crop/0x0:0x0/x/photo/2021/10/01/3219367321.jpg"
                 }
-              ]
+              ],
+        budgetData : {
+          targetBudget : 1000000,
+        }
     }
