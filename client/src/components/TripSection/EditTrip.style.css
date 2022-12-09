@@ -1,0 +1,65 @@
+.edit-trip-container{
+    width: 100%;
+    height: 100vh;
+    margin-left: 50px;
+}
+
+#placeTitle{
+    margin-top: 30px;
+    font-size: 32px;
+}
+
+.date-trip{
+    display: flex;
+    margin: 14px 0px;
+}
+
+.date-trip h3{
+    margin-left: 20px;
+    color: #bcc8c7;
+    font-size: 16px;
+    align-self: center;
+}
+
+.accordion {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.accordion-title {
+    margin-top: 40px;
+    font-size: 18px;
+    display: flex;
+    cursor: pointer;
+}
+
+.accordion-title h1{
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.toggle {
+    transform: rotate(180deg);
+    margin-right: 20px;
+    height: 16px;
+    align-self: center;
+    transition: all 0.35s ease;
+}
+
+.accordion img.toggle[aria-expanded="true"] {
+    transform: rotateZ(0deg);
+}
+
+.accordion-content {
+    margin-top: 20px;
+    overflow: hidden;
+    max-height: 1000px;
+    transition: max-height 1s ease-in-out;
+}
+
+.accordion-content[aria-expanded="true"] {
+    max-height: 0px;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+}

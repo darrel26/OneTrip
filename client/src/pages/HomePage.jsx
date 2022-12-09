@@ -11,14 +11,14 @@ import FeatureSection from '../components/FeatureSection/FeatureSection'
 const HomePage = () => {
   return (
     <div className='homepage-container'>
-        <div className='herosection-container'>
-            <Navbar/>
+        <div id='heroSectionID' className='herosection-container'>
+            <Navbar heroSectionId="heroSectionID" featureSectionid="featureSectionID" aboutUsid="aboutUsID"/>
             <Content/>
         </div>
-        <div>
+        <div id='featureSectionID'>
           <FeatureSection/>
         </div>
-        <div className='aboutus-container-home'>
+        <div id='aboutUsID' className='aboutus-container-home'>
           <AboutUs/>
         </div>
         <div>
