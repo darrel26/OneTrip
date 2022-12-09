@@ -13,7 +13,7 @@ const PlacePreview = ({index, placeName, placeDesc, placeImg}) => {
             </div>
         </div>
         <div className='preview-image'>
-            <img src={placeImg}/>
+            <img src={placeImg} alt="Place destination"/>
         </div>
     </div>
   )

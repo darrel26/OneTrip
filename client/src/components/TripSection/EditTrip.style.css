@@ -1,6 +1,5 @@
 .edit-trip-container{
     width: 100%;
-    height: 100vh;
     margin-left: 50px;
 }
 
@@ -33,9 +32,36 @@
     font-size: 18px;
     display: flex;
     cursor: pointer;
+    width: 100%;
 }
 
-.accordion-title h1{
+.accordion-title-budget {
+    margin-top: 40px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+}
+
+.accordion-title-budget button{
+    font-size: 12px;
+    font-weight: bold;
+    width: 110px;
+    height: 40px;
+    border: none;
+    background-color: #166678;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.budget-title{
+    cursor: pointer;
+    display: flex;
+    width: 80%;
+}
+
+.title{
     font-weight: 500;
     font-size: 24px;
 }
@@ -45,7 +71,7 @@
     margin-right: 20px;
     height: 16px;
     align-self: center;
-    transition: all 0.35s ease;
+    transition: all 0.3s ease;
 }
 
 .accordion img.toggle[aria-expanded="true"] {
@@ -56,7 +82,7 @@
     margin-top: 20px;
     overflow: hidden;
     max-height: 1000px;
-    transition: max-height 1s ease-in-out;
+    transition: max-height 0.8s ease-in-out;
 }
 
 .accordion-content[aria-expanded="true"] {
