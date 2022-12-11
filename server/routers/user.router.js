@@ -4,13 +4,14 @@ const bcrypt = require('bcrypt');
 const router = require('express').Router();
 const User = require('../models/user.model');
 const config = require('../utils/config');
+const { authenticateToken } = require('../utils/middleware');
 
-router.get('/all', async (req, res) => {
+router.get('/all', authenticateToken, async (req, res) => {
     const users = await User.find({});
     res.json(users);
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', authenticateToken, async (req, res) => {
     const { id } = req.params;
     const specificUser = User.findById(id);
     if (specificUser) {
@@ -20,15 +21,15 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.post('/register', async (req, res) => {
+router.post('/register', async (req, res, next) => {
     const { email, username, password } = req.body;
 
     const isUserExisting = await User.findOne({ username });
 
     if (isUserExisting) {
-        return res.status(400).json({
-            error: 'username must be unique',
-        });
+        const duplicateError = new Error(`${username} already taken!`);
+        duplicateError.status = 400;
+        next(duplicateError);
     }
 
     const saltRounds = 10;
@@ -40,22 +41,29 @@ router.post('/register', async (req, res) => {
         password: passwordHash,
     });
 
-    const savedUser = await newUser.save();
-    return res.status(201).json({
-        userData: savedUser,
-        message: 'Registration Success!',
-    });
+    try {
+        const savedUser = await newUser.save();
+
+        return res.status(201).json({
+            userData: savedUser,
+            message: 'Registration Success!',
+        });
+    } catch (error) {
+        error.status = 403;
+        next(error);
+    }
 });
 
-router.post('/login', async (req, res) => {
+router.post('/login', async (req, res, next) => {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
     const passwordCheck = user === null ? false : await bcrypt.compare(password, user.password);
 
     if (!(user && passwordCheck)) {
-        return res.status(401).json({
-            error: 'invalid email or password!',
-        });
+        const credentialError = new Error('Invalid email or password');
+        credentialError.status = 401;
+        next(credentialError);
+        return;
     }
 
     const userForToken = {
@@ -67,7 +75,7 @@ router.post('/login', async (req, res) => {
         expiresIn: '2h',
     });
 
-    return res.json({
+    res.json({
         authToken,
         message: 'Login Success!',
     });

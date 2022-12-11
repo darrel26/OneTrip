@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const cors = require('cors');
+const { requestLog } = require('./utils/middleware');
+const { unknownEndpoint, errorHandler } = require('./utils/errorHandler');
 const userRouter = require('./routers/user.router');
 
 const app = express();
@@ -13,6 +15,10 @@ mongoose
 
 app.use(cors());
 app.use(express.json());
+app.use(requestLog);
+
 app.use('/api/users', userRouter);
+app.use(unknownEndpoint);
+app.use(errorHandler);
 
 module.exports = app;
