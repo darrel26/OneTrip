@@ -30,6 +30,7 @@ router.post('/register', async (req, res, next) => {
         const duplicateError = new Error(`${username} already taken!`);
         duplicateError.status = 400;
         next(duplicateError);
+        return;
     }
 
     const saltRounds = 10;
@@ -43,8 +44,7 @@ router.post('/register', async (req, res, next) => {
 
     try {
         const savedUser = await newUser.save();
-
-        return res.status(201).json({
+        res.status(201).json({
             userData: savedUser,
             message: 'Registration Success!',
         });
