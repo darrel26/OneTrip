@@ -1,5 +1,7 @@
-import React, {useState} from 'react'
+import React, {useRef, useState} from 'react'
 import chevron from '../../assets/Chevron-icon.svg'
+import gps from '../../assets/gps.svg'
+import plus from '../../assets/plus.svg'
 import calendar from '../../assets/Calendar-icon-trip.svg'
 import './EditTrip.style.css'
 import { placeVisit } from '../../DummyData'
@@ -11,6 +13,7 @@ const EditTrip = () => {
   const [dataTrip , setDataTrip] = useState(placeVisit);
   const [isOpen, setIsOpen] = useState(true);
   const [isOpenBudget, setIsOpenBudget] = useState(true);
+  const addPlace = useRef();
 
   return (
     <div className='edit-trip-container'>
@@ -29,7 +32,21 @@ const EditTrip = () => {
                 <PlacePreview key={item.objectId} placeImg={item.image} index={index} placeDesc={item.description} placeName={item.placeName}/>
              ))}
             </div>
+
+            <div className='add-place-container'>
+              <div className='add-place-input'>
+                <label htmlFor='placeInputAutoComplete'><img src={gps} alt="GPS Icon"/></label>
+                <input autoCapitalize="off" ref={addPlace} id='placeInputAutoComplete'/>
+              </div>
+              <div className='add-place-button'>
+                <p></p>
+                <h4>ADD PLACE</h4>
+                <img src={plus} alt="Plus Icon"/>
+              </div>
+            </div>
+            
         </div>
+
         <div className='accordion'>
             <div className='accordion-title-budget'>
               <div className='budget-title' onClick={() => setIsOpenBudget(!isOpenBudget)}>

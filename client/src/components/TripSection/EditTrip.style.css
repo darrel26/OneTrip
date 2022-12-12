@@ -89,3 +89,70 @@
     max-height: 0px;
     transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
 }
+
+.add-place-container{
+    height: 50px;
+    width: 85%;
+    display: flex;
+}
+
+.add-place-input{
+    display: flex;
+    align-self: center;
+    background-color: #eaeaea;
+    width: 75%;
+    border-radius: 8px;
+
+}
+
+.add-place-input label{
+    margin-top: auto;
+    margin-bottom: auto;
+    align-self: center;
+    margin-top: 5px;
+    margin-left: 10px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.add-place-input img{
+    position: relative;
+    filter: invert(44%) sepia(35%) saturate(1125%) hue-rotate(314deg) brightness(91%) contrast(103%);
+}
+
+.add-place-input input{
+    background-color: #eaeaea;
+    width: 100%;
+    border: none;
+    padding: 12px 5px;
+    outline: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.add-place-button{
+    width: 23%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #166678;
+    color: #FFF;
+    margin-left: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.add-place-button h4{
+    margin-top: auto;
+    margin-bottom: auto;
+    align-self: center;
+
+}
+
+.add-place-button img{
+    filter: invert(100%) sepia(14%) saturate(7453%) hue-rotate(291deg) brightness(119%) contrast(113%);
+    margin-top: auto;
+    margin-bottom: auto;
+    align-self: center;
+    width: 16px;
+    margin-right: 10px;
+}

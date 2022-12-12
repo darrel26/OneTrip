@@ -7,6 +7,7 @@ const SectionLogin = ({section}) => {
   const login_pass = useRef()
 
   const handleOnLogin = async (e) => {
+    
     e.preventDefault();
 
     console.log(login_username_email, login_pass)
@@ -19,13 +20,26 @@ const SectionLogin = ({section}) => {
     return await userLogin(userData);
   }
 
+
   return (
     <form onSubmit={handleOnLogin}>
       <div className="modal-body">
             <label>Email</label>
-            <input type="text" ref={login_username_email}  placeholder="email"/>
+            <input minLength="6"
+              autoComplete='off'
+              type="email" 
+              ref={login_username_email} 
+              required
+            />
             <label>Password</label>
-            <input type="password" ref={login_pass}  placeholder="password"/>
+            <input 
+              minLength="6" 
+              autoComplete='off' 
+              type="password" 
+              ref={login_pass}  
+              placeholder="password"
+              required
+            />
         </div>
         <div className='modal-button-container'>
             <button>Login</button>
