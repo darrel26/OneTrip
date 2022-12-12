@@ -13,6 +13,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.4",
     "react-scripts": "^2.1.3",
+    "sweetalert2": "^11.6.15",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -27,8 +28,12 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ], "rules": {
-      "indent": ["error", 4]
+    ],
+    "rules": {
+      "indent": [
+        "error",
+        4
+      ]
     }
   },
   "browserslist": {
