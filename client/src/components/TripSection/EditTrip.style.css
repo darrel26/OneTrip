@@ -3,6 +3,28 @@
     margin-left: 50px;
 }
 
+.trip-title{
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.trip-title button{
+    margin-top: auto;
+    width: 175px;
+    height: 50px;
+    align-self: center;
+    margin-right: 5px;
+    border: none;
+    background-color: #166678;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 7px;
+    color: #FFF;
+    cursor: pointer;
+}
+
 #placeTitle{
     margin-top: 30px;
     font-size: 32px;
@@ -91,7 +113,7 @@
 }
 
 .add-place-container{
-    height: 50px;
+    height: 55px;
     width: 85%;
     display: flex;
 }
@@ -120,17 +142,6 @@
     filter: invert(44%) sepia(35%) saturate(1125%) hue-rotate(314deg) brightness(91%) contrast(103%);
 }
 
-.add-place-input input{
-    background-color: #eaeaea;
-    width: 100%;
-    border: none;
-    padding: 12px 5px;
-    outline: none;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 600;
-}
-
 .add-place-button{
     width: 23%;
     display: flex;
@@ -146,6 +157,7 @@
     margin-top: auto;
     margin-bottom: auto;
     align-self: center;
+    margin-left: 15px;
 
 }
 
@@ -156,4 +168,16 @@
     align-self: center;
     width: 16px;
     margin-right: 10px;
+}
+
+#placeInputAutoComplete{
+    margin-top: 5px;
+    background-color: #eaeaea;
+    width: 100%;
+    border: none;
+    padding: 12px 5px;
+    outline: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
 }

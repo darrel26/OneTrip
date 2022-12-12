@@ -19,13 +19,18 @@ const TripPage = () => {
 
   return (
     <div className='trippage-maincontainer'>
-      <div className='trippage-container-left'>
-        <NavbarTrip/>
-        <EditTrip/>
-      </div>
-      <div className='trippage-container-right'>
-        {isLoaded? <GoogleMap mapCenter={center}/> : loadError}
-      </div>
+      {isLoaded?
+        <>
+          <div className='trippage-container-left'>
+            <NavbarTrip/>
+            <EditTrip/>
+          </div>
+          <div className='trippage-container-right'>
+            <GoogleMap mapCenter={center}/>
+          </div>
+        </>:
+        loadError
+      }
     </div>
   )
 }
