@@ -1,5 +1,6 @@
 import React, {useRef} from 'react'
 import { userSignUp } from '../../../utils/service'
+import { succesToast, errorAlert } from '../../../utils/notificationAlert'
 import './SectionLogin'
 
 const SectionSignup = ({section}) => {
@@ -17,7 +18,13 @@ const SectionSignup = ({section}) => {
       password: signup_pass.current.value
     }
 
-    return await userSignUp(newUser);
+    try {
+      await userSignUp(newUser)
+        .then(({message}) => succesToast(message))
+    } catch (error) {
+      const { status, message } = error.response.data.error
+      errorAlert(status, message)
+    }
   }
 
   return (

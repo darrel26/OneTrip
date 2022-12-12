@@ -1,5 +1,6 @@
 import React, {useRef} from 'react'
 import { userLogin } from '../../../utils/service'
+import { succesToast, errorAlert } from '../../../utils/notificationAlert'
 import './Section.style.css'
 
 const SectionLogin = ({section}) => {
@@ -9,14 +10,21 @@ const SectionLogin = ({section}) => {
   const handleOnLogin = async (e) => {
     e.preventDefault();
 
-    console.log(login_username_email, login_pass)
-
     const userData = {
       email: login_username_email.current.value,
       password: login_pass.current.value
     }
 
-    return await userLogin(userData);
+    try {
+      await userLogin(userData)
+        .then(({authToken, message}) => {
+          document.cookie = `token=${authToken}`
+          succesToast(message);
+        });
+    } catch (error) {
+      const { status, message } = error.response.data.error
+      errorAlert(status, message)
+    };
   }
 
   return (
