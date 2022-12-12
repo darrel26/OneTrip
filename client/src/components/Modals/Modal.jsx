@@ -7,7 +7,7 @@ import OneTrip from '../Logo/OneTrip'
 import SectionLogin from './Sections/SectionLogin'
 import SectionSignup from './Sections/SectionSignup'
 
-const Modal = ({setModal, sections}) => {
+const Modal = ({setModal, sections, setLoginStatus}) => {
   const [section,setSection] = useState(sections)
 
   return (
@@ -21,7 +21,7 @@ const Modal = ({setModal, sections}) => {
         </div>
         {
           section === 'login' ? 
-          <SectionLogin section={setSection}/> 
+          <SectionLogin section={setSection} setLoginStatus={setLoginStatus}/> 
           :<SectionSignup section={setSection}/>
         }
       </div>
