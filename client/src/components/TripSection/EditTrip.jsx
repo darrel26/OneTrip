@@ -10,6 +10,7 @@ import { placeVisit } from '../../DummyData'
 import './EditTrip.style.css'
 import PlacePreview from './PlacePreview'
 import Budget from './Budget'
+import BudgetList from './BudgetList';
 
 const EditTrip = () => {
   // eslint-disable-next-line
@@ -66,6 +67,7 @@ const EditTrip = () => {
             </div>
             <div className='accordion-content' aria-expanded={!isOpenBudget}>
               <Budget value={dataTrip.budgetData.targetBudget}/>
+              <BudgetList data={dataTrip.budgetData.budgetDetail}/>
             </div>
         </div>
     </div>

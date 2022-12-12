@@ -1,0 +1,27 @@
+.table-budget{
+    border-collapse: collapse;
+    width: 85%;
+    margin-bottom: 30px;
+}
+
+.budget{
+    margin-left: 40px;
+}
+
+.budget tr{
+    width: 83%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.budget th{
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: left;
+}
+
+.budget td{
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 20%;
+}
