@@ -170,6 +170,10 @@
     margin-right: 10px;
 }
 
+.auto-complete-add-place{
+    width: 88%;
+}
+
 #placeInputAutoComplete{
     margin-top: 5px;
     background-color: #eaeaea;

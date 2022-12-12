@@ -41,6 +41,7 @@ const EditTrip = () => {
                 <div className='add-place-input'>
                   <label htmlFor='placeInputAutoComplete'><img src={gps} alt="GPS Icon"/></label>
                   <Autocomplete
+                   className='auto-complete-add-place'
                    restrictions={{country: "id"}}
                   >
                     <input autoCapitalize="off" ref={addPlace} id='placeInputAutoComplete'/>
