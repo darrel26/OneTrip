@@ -3,16 +3,16 @@ import './Navbar.style.css'
 import OneTrip from '../Logo/OneTrip'
 import Modal from '../Modals/Modal'
 
-const Navbar = () => {
+const Navbar = ({heroSectionId, featureSectionid, aboutUsid}) => {
   const [modal, setModal] = useState(false)
   const [section, setSection] = useState(null)
   return (
     <div className='herosection-nav'>
         <OneTrip/>
         <div className='herosection-navbar'>
-            <li>HOME</li>
-            <li>FEATURE</li>
-            <li>ABOUT US</li>
+            <a href={`#${heroSectionId}`}>HOME</a>
+            <a href={`#${featureSectionid}`}>FEATURE</a>
+            <a href={`#${aboutUsid}`}>ABOUT US</a>
         </div>
         <div className='herosection-user'>
             <li onClick={() => {

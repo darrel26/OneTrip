@@ -11,6 +11,10 @@ const GoogleMapSection = ({mapCenter, onMapLoad}) => {
         mapContainerStyle={containerStyle}
         center={mapCenter}
         zoom={15}
+        options={{
+          zoomControl: false,
+          streetViewControl: false,
+        }}
     >
       {/* empty */}
     </GoogleMap>
