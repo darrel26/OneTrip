@@ -28,7 +28,7 @@
     "extends": [
       "react-app"
     ], "rules": {
-      "indent": ["error", 4],
+      "indent": ["error", "tab"],
       "no-duplicate-imports":"error",
       "keyword-spacing":["error", { "before": true, "after": true }],
       "jsx-quotes":"error",
