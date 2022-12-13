@@ -8,24 +8,24 @@ import FeatureSection from '../components/FeatureSection/FeatureSection'
 
 
 const HomePage = () => {
-  return (
-    <div className='homepage-container'>
-        <div id='heroSectionID' className='herosection-container'>
-            <Navbar heroSectionId="heroSectionID" featureSectionid="featureSectionID" aboutUsid="aboutUsID"/>
-            <Content/>
-        </div>
-        <div id='featureSectionID'>
-          <FeatureSection/>
-        </div>
-        <div id='aboutUsID' className='aboutus-container-home'>
-          <AboutUs/>
-        </div>
-        <div>
-          <CTASection/>
-        </div>
+	return (
+		<div className="homepage-container">
+			<div id="heroSectionID" className="herosection-container">
+				<Navbar heroSectionId="heroSectionID" featureSectionid="featureSectionID" aboutUsid="aboutUsID"/>
+				<Content/>
+			</div>
+			<div id="featureSectionID">
+				<FeatureSection/>
+			</div>
+			<div id="aboutUsID" className="aboutus-container-home">
+				<AboutUs/>
+			</div>
+			<div>
+				<CTASection/>
+			</div>
         
-    </div>
-  )
+		</div>
+	)
 }
 
 export default HomePage
