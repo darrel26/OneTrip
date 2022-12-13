@@ -1,28 +1,42 @@
-import React, {useRef} from 'react'
-import { userLogin } from '../../../utils/service'
-import './Section.style.css'
+import React, { useRef } from 'react';
+import { succesToast, errorAlert } from '../../../utils/notificationAlert';
+import axios from 'axios';
+import './Section.style.css';
 
-const SectionLogin = ({section}) => {
-  const login_username_email = useRef()
-  const login_pass = useRef()
+const SectionLogin = ({ section, setLoginStatus }) => {
+  const login_username_email = useRef();
+  const login_pass = useRef();
 
-  const handleOnLogin = async (e) => {
-    
+  const login = async (e) => {
     e.preventDefault();
 
-    console.log(login_username_email, login_pass)
-
-    const userData = {
+    const userCredential = {
       email: login_username_email.current.value,
-      password: login_pass.current.value
-    }
+      password: login_pass.current.value,
+    };
 
-    return await userLogin(userData);
-  }
+    const request = axios.post(
+      `${process.env.REACT_APP_BASE_URL}/users/login`,
+      userCredential
+    );
+    
+    await request
+      .then(({ data }) => {
+        const { id, authToken, message } = data;
+        document.cookie = `userId=${id}`;
+        document.cookie = `token=${authToken}`;
+        setLoginStatus(true);
+        succesToast(message);
+      })
+      .catch((error) => {
+        const { status, message } = error.response.data.error;
+        errorAlert(status, message);
+      });
+  };
 
 
   return (
-    <form onSubmit={handleOnLogin}>
+    <form onSubmit={login}>
       <div className="modal-body">
             <label>Email</label>
             <input minLength="6"
@@ -50,7 +64,7 @@ const SectionLogin = ({section}) => {
           }}>Register Here</span></p>
       </div>
     </form>
-  )
-}
+  );
+};
 
-export default SectionLogin
+export default SectionLogin;
