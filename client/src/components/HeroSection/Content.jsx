@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import Datepicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css';
+import {Link} from 'react-router-dom'
 
 import Location from '../../assets/gps.svg'
 import Plus from '../../assets/plus.svg'
@@ -49,7 +50,7 @@ const Content = () => {
                 />
             </div>
             <div className='content-button'>
-                <button><img src={Plus} alt="plus icon"/></button>
+                <Link id='addTripButton' to="/trip"><img src={Plus} alt="plus icon"/></Link>
             </div>
         </div>
     </div>
