@@ -1,5 +1,4 @@
 import React from 'react'
-
 import Navbar from '../components/HeroSection/Navbar'
 import Content from '../components/HeroSection/Content'
 import AboutUs from '../components/AboutUsSection/AboutUs'

@@ -3,6 +3,28 @@
     margin-left: 50px;
 }
 
+.trip-title{
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.trip-title button{
+    margin-top: auto;
+    width: 175px;
+    height: 50px;
+    align-self: center;
+    margin-right: 5px;
+    border: none;
+    background-color: #166678;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 7px;
+    color: #FFF;
+    cursor: pointer;
+}
+
 #placeTitle{
     margin-top: 30px;
     font-size: 32px;
@@ -88,4 +110,78 @@
 .accordion-content[aria-expanded="true"] {
     max-height: 0px;
     transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.add-place-container{
+    height: 55px;
+    width: 85%;
+    display: flex;
+}
+
+.add-place-input{
+    display: flex;
+    align-self: center;
+    background-color: #eaeaea;
+    width: 75%;
+    border-radius: 8px;
+
+}
+
+.add-place-input label{
+    margin-top: auto;
+    margin-bottom: auto;
+    align-self: center;
+    margin-top: 5px;
+    margin-left: 10px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.add-place-input img{
+    position: relative;
+    filter: invert(44%) sepia(35%) saturate(1125%) hue-rotate(314deg) brightness(91%) contrast(103%);
+}
+
+.add-place-button{
+    width: 23%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #166678;
+    color: #FFF;
+    margin-left: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 55px;
+}
+.add-place-button h4{
+    margin-top: auto;
+    margin-bottom: auto;
+    align-self: center;
+    margin-left: 15px;
+
+}
+
+.add-place-button img{
+    filter: invert(100%) sepia(14%) saturate(7453%) hue-rotate(291deg) brightness(119%) contrast(113%);
+    margin-top: auto;
+    margin-bottom: auto;
+    align-self: center;
+    width: 16px;
+    margin-right: 10px;
+}
+
+.auto-complete-add-place{
+    width: 88%;
+}
+
+#placeInputAutoComplete{
+    margin-top: 5px;
+    background-color: #eaeaea;
+    width: 100%;
+    border: none;
+    padding: 12px 5px;
+    outline: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
 }

@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { Autocomplete } from '@react-google-maps/api';
 import Datepicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css';
 import {Link} from 'react-router-dom'
@@ -20,7 +21,9 @@ const Content = () => {
         <div className='herosection-contenttrip'>
             <div className='content-input city'>
                 <img src={Location} alt="Location logo"/>
-                <input className='hero-input location-autocomplete' placeholder='City, Destination'/>
+                <Autocomplete>
+                    <input className='hero-input location-autocomplete' placeholder='City, Destination'/>
+                </Autocomplete>
             </div>
             <div className='content-input date'>
                 <img src={Calendar} alt="Location logo"/>
@@ -33,6 +36,7 @@ const Content = () => {
                     endDate={endDate}
                     placeholderText="Start date"
                     dateFormat="dd MMM yyyy"
+                    required
                 />
             </div>
             <div className='content-input date no-border'>
@@ -46,6 +50,7 @@ const Content = () => {
                     endDate={endDate}
                     placeholderText="End date"
                     dateFormat="dd MMM yyyy"
+                    required
                 />
             </div>
             <div className='content-button'>

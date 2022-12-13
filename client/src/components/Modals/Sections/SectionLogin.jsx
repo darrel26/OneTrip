@@ -19,6 +19,7 @@ const SectionLogin = ({ section, setLoginStatus }) => {
       `${process.env.REACT_APP_BASE_URL}/users/login`,
       userCredential
     );
+    
     await request
       .then(({ data }) => {
         const { id, authToken, message } = data;
@@ -33,28 +34,34 @@ const SectionLogin = ({ section, setLoginStatus }) => {
       });
   };
 
+
   return (
     <form onSubmit={login}>
       <div className="modal-body">
-        <label>Email</label>
-        <input type="text" ref={login_username_email} placeholder="email" />
-        <label>Password</label>
-        <input type="password" ref={login_pass} placeholder="password" />
-      </div>
-      <div className="modal-button-container">
-        <button>Login</button>
-      </div>
-      <div className={`modal-footer`}>
-        <p>
-          Don't have an account?{' '}
-          <span
-            onClick={() => {
-              section('signup');
-            }}
-          >
-            Register Here
-          </span>
-        </p>
+            <label>Email</label>
+            <input minLength="6"
+              autoComplete='off'
+              type="email" 
+              ref={login_username_email} 
+              required
+            />
+            <label>Password</label>
+            <input 
+              minLength="6" 
+              autoComplete='off' 
+              type="password" 
+              ref={login_pass}  
+              placeholder="password"
+              required
+            />
+        </div>
+        <div className='modal-button-container'>
+            <button>Login</button>
+        </div>
+        <div className={`modal-footer`}>
+          <p>Don't have an account? <span onClick={() =>{
+            section('signup')
+          }}>Register Here</span></p>
       </div>
     </form>
   );

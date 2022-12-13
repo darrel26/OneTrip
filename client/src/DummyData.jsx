@@ -25,5 +25,19 @@ export const placeVisit =
               ],
         budgetData : {
           targetBudget : 1000000,
+          budgetDetail:[
+            {
+              to:"Food",
+              expenses:50000
+            },
+            {
+              to:"Hotel",
+              expenses:250000
+            },
+            {
+              to:"Transportation",
+              expenses:200000
+            }
+          ]
         }
     }
