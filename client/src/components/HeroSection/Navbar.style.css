@@ -1,44 +1,49 @@
-.herosection-nav{
-    position: relative;
-    display: flex;
-    justify-content: space-evenly;
-    list-style-type: none;
-    padding-top: 40px;
+.herosection-nav {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+  padding-top: 40px;
 }
 
-
-.herosection-nav h1{
-    cursor: pointer;
-    margin: 24px;
+.herosection-nav h1 {
+  cursor: pointer;
+  margin: 24px;
 }
-.herosection-nav h1 span{
-    color: #166678;
-}
-
-.herosection-navbar{
-    display: flex;
+.herosection-nav h1 span {
+  color: #166678;
 }
 
-.herosection-navbar a{
-    cursor: pointer;
-    margin: 30px;
-    font-size: 18px;
-    font-weight: 600;
-    text-decoration: none;
-    color: #000
+.herosection-navbar {
+  display: flex;
 }
 
-.herosection-user{
-    display: flex;
+.herosection-navbar a {
+  cursor: pointer;
+  align-self: center;
+  margin: 0 25px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
 }
 
-.herosection-user li{
-    cursor: pointer;
-    margin: 30px;
-    font-size: 18px;
-    font-weight: 600;
+.herosection-user {
+  display: flex;
 }
 
-.herosection-user #sign-up{
-    color: #166678;
+.herosection-user li {
+  cursor: pointer;
+  margin: 30px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.herosection-user #sign-up {
+  color: #166678;
+}
+
+.herosection-user img {
+  cursor: pointer;
+  width: 50px;
 }

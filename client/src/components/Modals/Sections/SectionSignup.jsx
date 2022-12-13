@@ -1,5 +1,6 @@
 import React, {useRef} from 'react'
-import { userSignUp } from '../../../utils/service'
+import axios from 'axios'
+import { succesToast, errorAlert } from '../../../utils/notificationAlert'
 import './SectionLogin'
 
 const SectionSignup = ({section}) => {
@@ -11,13 +12,21 @@ const SectionSignup = ({section}) => {
   const handleOnSignUp = async (e) => {
     e.preventDefault();
     
-    const newUser = {
+    const userData = {
       email: signup_email.current.value,
       username: signup_username.current.value,
       password: signup_pass.current.value
     }
 
-    return await userSignUp(newUser);
+    const request = axios.post(`${process.env.REACT_APP_BASE_URL}/users/register`, userData);
+    await request
+      .then(({ data }) => {
+        const { message } = data;
+        succesToast(message);
+      }).catch(error => {
+        const { status, message } = error.response.data.error
+        errorAlert(status, message)
+      })
   }
 
   return (
