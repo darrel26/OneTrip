@@ -13,7 +13,7 @@ router.get('/all', authenticateToken, async (req, res) => {
 
 router.get('/:id', authenticateToken, async (req, res) => {
     const { id } = req.params;
-    const specificUser = User.findById(id);
+    const specificUser = await User.findById(id);
     if (specificUser) {
         res.status(200).json(specificUser);
     } else {
@@ -76,6 +76,7 @@ router.post('/login', async (req, res, next) => {
     });
 
     res.json({
+        id: user._id,
         authToken,
         message: 'Login Success!',
     });

@@ -23,7 +23,7 @@ const authenticateToken = (req, res, next) => {
         return;
     }
 
-    jwt.verify(token, process.env.TOKEN_SECRET, (err) => {
+    jwt.verify(token, process.env.TOKEN_SECRET, (err, user) => {
         if (err) {
             // eslint-disable-next-line no-param-reassign
             err.status = 403;
@@ -32,7 +32,7 @@ const authenticateToken = (req, res, next) => {
             return;
         }
 
-        req.user = User.findById(token._id);
+        req.user = User.findById(user.id);
         next();
     });
 };
