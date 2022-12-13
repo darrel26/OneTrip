@@ -26,14 +26,19 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "rules": {
-      "indent": [
-        "error",
-        4
-      ]
+      "react-app"
+    ], "rules": {
+      "indent": ["error", "tab"],
+      "no-duplicate-imports":"error",
+      "keyword-spacing":["error", { "before": true, "after": true }],
+      "jsx-quotes":"error",
+      "linebreak-style": ["error", "windows"],
+      "arrow-spacing":"error",
+      "eol-last": ["error", "never"],
+      "no-multiple-empty-lines":"error",
+      "no-multi-spaces":"error",
+      "object-curly-spacing": ["error", "always"],
+      "array-bracket-spacing": ["error", "always"]
     }
   },
   "browserslist": {

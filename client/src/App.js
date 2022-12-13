@@ -5,26 +5,26 @@ import HomePage from './pages/HomePage'
 import './App.css'
 import TripPage from './pages/TripPage'
 
-const library = ['places']
+const library = [ 'places' ]
 const App = () => {
-  const {isLoaded, loadError} = useJsApiLoader({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_API,
-    libraries: library
-  })
+	const { isLoaded, loadError } = useJsApiLoader({
+		googleMapsApiKey: process.env.REACT_APP_GOOGLE_API,
+		libraries: library
+	})
 
-  return (
+	return (
     <>
       {isLoaded? 
-      <Router>
-        <Routes>
-          <Route path="/" element={<HomePage/>} />
-          <Route path="/trip" element={<TripPage/>} />
-      </Routes>
-    </Router>:
-      loadError
-    }
+      	<Router>
+      		<Routes>
+      			<Route path="/" element={<HomePage/>} />
+      			<Route path="/trip" element={<TripPage/>} />
+      		</Routes>
+      	</Router>:
+      	loadError
+      }
     </>
-  )
+	)
 }
 
 export default App;
