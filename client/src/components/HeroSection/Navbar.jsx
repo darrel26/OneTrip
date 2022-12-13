@@ -8,9 +8,9 @@ import getCookie from '../../utils/cookies';
 import { errorAlert } from '../../utils/notificationAlert';
 
 const Navbar = ({ heroSectionId, featureSectionid, aboutUsid }) => {
-	const [modal, setModal] = useState(false);
-	const [section, setSection] = useState(null);
-	const [loginStatus, setLoginStatus] = useState(false);
+	const [ modal, setModal ] = useState(false);
+	const [ section, setSection ] = useState(null);
+	const [ loginStatus, setLoginStatus ] = useState(false);
 
 	const viewProfile = async () => {
 		const authToken = getCookie('token');
