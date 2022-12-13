@@ -36,7 +36,9 @@
       "arrow-spacing":"error",
       "eol-last": ["error", "never"],
       "no-multiple-empty-lines":"error",
-      "no-multi-spaces":"error"
+      "no-multi-spaces":"error",
+      "object-curly-spacing": ["error", "always"],
+      "array-bracket-spacing": ["error", "always"]
     }
   },
   "browserslist": {
