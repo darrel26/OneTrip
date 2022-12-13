@@ -11,8 +11,8 @@ import Calendar from '../../assets/calendar.svg'
 import './Content.stye.css'
 
 const Content = () => {
-	const [startDate, setStartDate] = useState(null)
-	const [endDate, setEndDate] = useState(null)
+	const [ startDate, setStartDate ] = useState(null)
+	const [ endDate, setEndDate ] = useState(null)
 
 	return (
 		<div className="herosection-content">
@@ -36,6 +36,7 @@ const Content = () => {
 						endDate={endDate}
 						placeholderText="Start date"
 						dateFormat="dd MMM yyyy"
+						maxDate={endDate}
 						required
 					/>
 				</div>
@@ -50,6 +51,7 @@ const Content = () => {
 						endDate={endDate}
 						placeholderText="End date"
 						dateFormat="dd MMM yyyy"
+						minDate={startDate}
 						required
 					/>
 				</div>
