@@ -18,14 +18,14 @@ const Content = () => {
         <h1>Planning for your trip, will make the trip even better!</h1>
         <h2>Build and Organize your trip, in a free trip planner web application designed for your vacations. Make your trip and start your journey!</h2>
         <div className='herosection-contenttrip'>
-            <div className='content-input'>
+            <div className='content-input city'>
                 <img src={Location} alt="Location logo"/>
-                <input className='datepicker' placeholder='City, Destination'/>
+                <input className='hero-input location-autocomplete' placeholder='City, Destination'/>
             </div>
-            <div className='content-input'>
+            <div className='content-input date'>
                 <img src={Calendar} alt="Location logo"/>
                 <Datepicker
-                    className='datepicker'
+                    className='hero-input datepicker'
                     selected={startDate}
                     onChange={ (date) => setStartDate(date)}
                     selectsStart
@@ -35,11 +35,10 @@ const Content = () => {
                     dateFormat="dd MMM yyyy"
                 />
             </div>
-            <div className='content-input'>
+            <div className='content-input date no-border'>
                 <img src={Calendar} alt="Location logo"/>
                 <Datepicker
-                    id='no-border'
-                    className='datepicker'
+                    className='hero-input datepicker'
                     selected={endDate}
                     onChange={ (date) => setEndDate(date)}
                     selectsEnd

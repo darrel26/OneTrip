@@ -1,0 +1,64 @@
+.budget-container{
+    display: flex;
+    width: 83%;
+    background-color: #eaeaea;
+    height: 111px;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.value-container{
+    display: flex;
+    align-self: center;
+    width: 70%;
+    height: 90px;
+    border-right: solid 2px #c8c7c7;
+    margin-left: 30px;
+}
+
+.value{
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-bottom: solid 4px #c8c7c7;
+    width: 70%;
+}
+
+.value h1{
+    margin-bottom: 7px;
+    font-size: 24px;
+    font-weight: 500;
+
+}
+
+#dolarIcon{
+    margin-right: 20px;
+    align-self: center;
+    margin-bottom: 10px;
+}
+
+.edit-budget{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 30%;
+    height: 90px;
+    margin-left: 30px;
+
+
+}
+
+.edit-conf{
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.edit-conf p{
+    font-size: 15px;
+    margin-left: 20px;
+    font-weight: 600;
+}

@@ -1,11 +1,18 @@
 .trippage-maincontainer{
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
 }
 
 .trippage-container-left{
     width: 50%;
     height: 100vh;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.trippage-container-left::-webkit-scrollbar{
+    width: 0
 }
 
 .trippage-container-right{
