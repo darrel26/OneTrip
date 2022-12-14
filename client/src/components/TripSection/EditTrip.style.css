@@ -1,5 +1,6 @@
 .edit-trip-container{
     width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -117,13 +118,11 @@
 .accordion-content {
     margin-top: 20px;
     overflow: hidden;
-    max-height: 1000px;
-    transition: max-height 0.8s ease-in-out;
+    max-height: auto;
 }
 
 .accordion-content[aria-expanded="true"] {
     max-height: 0px;
-    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
 }
 
 .add-place-container{
