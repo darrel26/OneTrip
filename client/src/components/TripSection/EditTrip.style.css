@@ -1,10 +1,25 @@
 .edit-trip-container{
     width: 100%;
-    margin-left: 50px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* content */
+
+.content-container {
+    width: 85%;
+}
+
+/* title container */
+
+.title-container {
+    display: flex;
+    flex-direction: column;
 }
 
 .trip-title{
-    width: 85%;
     display: flex;
     justify-content: space-between;
 }
@@ -14,7 +29,6 @@
     width: 175px;
     height: 50px;
     align-self: center;
-    margin-right: 5px;
     border: none;
     background-color: #166678;
     font-weight: 600;
@@ -42,6 +56,8 @@
     align-self: center;
 }
 
+/* Place to Visit */
+
 .accordion {
     margin: 0;
     display: flex;
@@ -62,7 +78,6 @@
     font-size: 18px;
     display: flex;
     justify-content: space-between;
-    width: 85%;
 }
 
 .accordion-title-budget button{
@@ -103,24 +118,20 @@
 .accordion-content {
     margin-top: 20px;
     overflow: hidden;
-    max-height: 1000px;
-    transition: max-height 0.8s ease-in-out;
+    max-height: auto;
 }
 
 .accordion-content[aria-expanded="true"] {
     max-height: 0px;
-    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
 }
 
 .add-place-container{
     height: 55px;
-    width: 85%;
     display: flex;
 }
 
 .add-place-input{
     display: flex;
-    align-self: center;
     background-color: #eaeaea;
     width: 75%;
     border-radius: 8px;
@@ -128,13 +139,10 @@
 }
 
 .add-place-input label{
-    margin-top: auto;
-    margin-bottom: auto;
-    align-self: center;
-    margin-top: 5px;
-    margin-left: 10px;
-    padding: 12px;
-    cursor: pointer;
+    display: flex;
+    width: 15%;
+    align-items: center;
+    justify-content: center;
 }
 
 .add-place-input img{
@@ -143,7 +151,7 @@
 }
 
 .add-place-button{
-    width: 23%;
+    width: 25%;
     display: flex;
     justify-content: space-between;
     background-color: #166678;
@@ -171,15 +179,15 @@
 }
 
 .auto-complete-add-place{
-    width: 88%;
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
 #placeInputAutoComplete{
-    margin-top: 5px;
     background-color: #eaeaea;
-    width: 100%;
+    width: 95%;
     border: none;
-    padding: 12px 5px;
     outline: none;
     border-radius: 8px;
     font-size: 15px;

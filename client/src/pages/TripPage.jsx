@@ -6,15 +6,15 @@ import EditTrip from '../components/TripSection/EditTrip'
 
 const TripPage = () => {
 	const center = {
-		lat: -3.745,
-		lng: -38.523
+		lat: -6.914864,
+		lng: 107.608238
 	};
 
 	return (
 		<div className="trippage-maincontainer">
 			<div className="trippage-container-left">
 				<NavbarTrip/>
-				<EditTrip/>
+				<EditTrip center={center}/>
 			</div>
 			<div className="trippage-container-right">
 				<GoogleMap mapCenter={center}/>
