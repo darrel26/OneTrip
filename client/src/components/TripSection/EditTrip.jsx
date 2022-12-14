@@ -11,12 +11,14 @@ import './EditTrip.style.css'
 import PlacePreview from './PlacePreview'
 import Budget from './Budget'
 import BudgetList from './BudgetList';
+import BudgetDetail from './BudgetDetail';
 
 const EditTrip = () => {
 	// eslint-disable-next-line
-  const [dataTrip , setDataTrip] = useState(placeVisit);
+  	const [dataTrip , setDataTrip] = useState(placeVisit);
 	const [ isOpen, setIsOpen ] = useState(true);
 	const [ isOpenBudget, setIsOpenBudget ] = useState(true);
+	const [ openBudgetDetail, setOpenBudgetDetail ] = useState(false)
 	const addPlace = useRef();
 
 	return (
@@ -63,13 +65,16 @@ const EditTrip = () => {
 						<img className="toggle" src={chevron} alt="chevron icon" aria-expanded={isOpenBudget}/>
 						<h1 className="title">Budgetting</h1>
 					</div>
-					<button>ADD EXPENSES</button>
+					<button onClick={() => setOpenBudgetDetail(!openBudgetDetail)}>ADD EXPENSES</button>
 				</div>
 				<div className="accordion-content" aria-expanded={!isOpenBudget}>
 					<Budget value={dataTrip.budgetData.targetBudget}/>
 					<BudgetList data={dataTrip.budgetData.budgetDetail}/>
 				</div>
 			</div>
+			{openBudgetDetail&& (
+				<BudgetDetail setState={setOpenBudgetDetail}/>
+			)}
 		</div>
 	)
 }

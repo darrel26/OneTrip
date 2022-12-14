@@ -1,0 +1,79 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.modal-budget-detail{
+    width: 500px;
+    height: 300px;
+    border-radius: 11px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.modal-budget-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-budget-header h1{
+    font-size: 28px;
+    margin-left: 50px;
+}
+
+.modal-budget-header img{
+    width: 30px;
+    cursor: pointer;
+}
+
+.modal-budget-content{
+    margin-top: 20px;
+    height: 50%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-budget{
+    display: flex;
+    margin: 14px;
+    border-bottom: solid 2px #eaeaea;
+}
+
+.input-budget input{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding-left: 20px;
+}
+
+.input-budget select{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding-left: 20px;
+}
+
+.input-budget label img{
+     width: 30px;
+     outline: 3px;
+}
+
+
+.modal-budget-detail button{
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    height: 50px;
+    background-color: #166678;
+    color: #fff;
+    width: 150px;
+    align-self: center;
+    padding: 5px;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+}
