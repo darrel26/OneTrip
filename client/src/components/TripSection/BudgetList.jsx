@@ -7,12 +7,12 @@ const BudgetList = ({ data }) => {
 	return (
 		<table className="table-budget">
 			{dataDetail.map((item, index) => (
-				<div className="budget">
-					<tr>
+				<tbody key={index}>
+					<tr className="budget">
 						<th>{item.to}</th>
 						<td>IDR {item.expenses}</td>
 					</tr>
-				</div>
+				</tbody>			
 			))}    
 		</table>
 	)
