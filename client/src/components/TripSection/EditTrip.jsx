@@ -18,7 +18,7 @@ const EditTrip = ({ center }) => {
   const [dataTrip , setDataTrip] = useState(placeVisit)
 	const [ isOpen, setIsOpen ] = useState(true)
 	const [ isOpenBudget, setIsOpenBudget ] = useState(true)
-  const [ openBudgetDetail, setOpenBudgetDetail ] = useState(false)
+	const [ openBudgetDetail, setOpenBudgetDetail ] = useState(false)
 	const [ placeInput, setPlaceInput ] = useState()
 	let dataInput = useRef()
 	// trip data 
@@ -118,7 +118,6 @@ const EditTrip = ({ center }) => {
 						<h4>ADD PLACE</h4>
 						<img src={plus} alt="Plus Icon"/>
 					</div>
-					<button onClick={() => setOpenBudgetDetail(!openBudgetDetail)}>ADD EXPENSES</button>
 				</div>
 
 				<div className="accordion">
@@ -127,7 +126,7 @@ const EditTrip = ({ center }) => {
 							<img className="toggle" src={chevron} alt="chevron icon" aria-expanded={isOpenBudget}/>
 							<h1 className="title">Budgetting</h1>
 						</div>
-						<button>ADD EXPENSES</button>
+						<button onClick={() => setOpenBudgetDetail(!openBudgetDetail)}>ADD EXPENSES</button>
 					</div>
 					<div className="accordion-content" aria-expanded={!isOpenBudget}>
 						<Budget value={dataTrip.budgetData.targetBudget}/>

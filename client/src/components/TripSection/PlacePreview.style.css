@@ -1,7 +1,7 @@
 .preview-container{
     display: flex;
     justify-content: space-between;
-    height: max-content;
+    height: 130px;
     padding: 10px 0;
 }
 
