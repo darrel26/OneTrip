@@ -11,12 +11,14 @@ import './EditTrip.style.css'
 import PlacePreview from './PlacePreview'
 import Budget from './Budget'
 import BudgetList from './BudgetList';
+import BudgetDetail from './BudgetDetail';
 
 const EditTrip = ({ center }) => {
 	// eslint-disable-next-line
   const [dataTrip , setDataTrip] = useState(placeVisit)
 	const [ isOpen, setIsOpen ] = useState(true)
 	const [ isOpenBudget, setIsOpenBudget ] = useState(true)
+  const [ openBudgetDetail, setOpenBudgetDetail ] = useState(false)
 	const [ placeInput, setPlaceInput ] = useState()
 	let dataInput = useRef()
 	// trip data 
@@ -116,6 +118,7 @@ const EditTrip = ({ center }) => {
 						<h4>ADD PLACE</h4>
 						<img src={plus} alt="Plus Icon"/>
 					</div>
+					<button onClick={() => setOpenBudgetDetail(!openBudgetDetail)}>ADD EXPENSES</button>
 				</div>
 
 				<div className="accordion">
@@ -132,6 +135,9 @@ const EditTrip = ({ center }) => {
 					</div>
 				</div>
 			</div>
+			{openBudgetDetail&& (
+				<BudgetDetail setState={setOpenBudgetDetail}/>
+			)}
 		</div>
 	)
 }
