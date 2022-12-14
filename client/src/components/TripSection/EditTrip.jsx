@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState } from 'react'
 import { Autocomplete } from '@react-google-maps/api';
 
 import chevron from '../../assets/Chevron-icon.svg'
@@ -15,19 +15,16 @@ import BudgetDetail from './BudgetDetail';
 
 const EditTrip = ({ center }) => {
 	// eslint-disable-next-line
-  const [dataTrip , setDataTrip] = useState(placeVisit)
+  	const [ dataTrip , setDataTrip ] = useState(placeVisit)
 	const [ isOpen, setIsOpen ] = useState(true)
 	const [ isOpenBudget, setIsOpenBudget ] = useState(true)
 	const [ openBudgetDetail, setOpenBudgetDetail ] = useState(false)
-	const [ placeInput, setPlaceInput ] = useState()
-	let dataInput = useRef()
+	
 	// trip data 
+	let dataInput = useRef()
+	const [ placeInput, setPlaceInput ] = useState()
 	const [ tripData, setTripData ] = useState([])
 	const [ placeDetail, setPlaceDetail ] = useState()
-	
-	useEffect(() => {
-		console.log(tripData)
-	}, [ tripData ])
 
 	const getPlaceDetail = () => {
 		setPlaceDetail(placeInput.getPlace())
@@ -58,7 +55,6 @@ const EditTrip = ({ center }) => {
 						<h3>{`${placeVisit.dateStart} - ${placeVisit.dateEnd}`}</h3>
 					</div>
 				</div>
-				{/* Place to Visit */}
 				<div className="accordion">
 					<div className="accordion-title" onClick={() => setIsOpen(!isOpen)}>
 						<img className="toggle" src={chevron} alt="chevron icon" aria-expanded={isOpen}/>
@@ -103,11 +99,6 @@ const EditTrip = ({ center }) => {
 									setPlaceInput(autocomplete)
 								}
 							}
-							// geometry -> lat, lng
-							// photos
-							// place_id
-							// rating
-							// html_attribution -> name
 							onPlaceChanged={getPlaceDetail}
 						>
 							<input ref={dataInput} autoCapitalize="off" id="placeInputAutoComplete"/>
