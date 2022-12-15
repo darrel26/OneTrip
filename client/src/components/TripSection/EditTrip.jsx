@@ -105,11 +105,6 @@ const EditTrip = ({ center }) => {
 									setPlaceInput(autocomplete)
 								}
 							}
-							// geometry -> lat, lng
-							// photos
-							// place_id
-							// rating
-							// html_attribution -> name
 							onPlaceChanged={getPlaceDetail}
 						>
 							<input ref={dataInput} autoCapitalize="off" id="placeInputAutoComplete"/>

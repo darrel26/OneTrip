@@ -1,23 +1,20 @@
-.budget-mainContainer{
-    display: flex;
-    flex-direction: column;
-}
 
 .budget-container{
+    width: 100%;
     display: flex;
-    background-color: #eaeaea;
-    height: 111px;
     border-radius: 15px;
-    padding: 10px;
+    
+
 }
 
 .value-container{
+    width: 100%;
+    border-radius: 6px;
+    padding: 14px;
+    background-color: #eaeaea;
     display: flex;
     align-self: center;
-    width: 70%;
     height: 90px;
-    border-right: solid 2px #c8c7c7;
-    margin-left: 30px;
 }
 
 
@@ -51,8 +48,8 @@
 
 
 .value h1{
+    margin-right: 10px;
     font-size: 24px;
-    font-weight: 500;
     align-self: center;
 
 }
@@ -70,23 +67,28 @@
     width: 30%;
     height: 90px;
     margin-left: 30px;
-
-
 }
 
 .edit-conf{
-    width: 80%;
+    display: flex;
+    justify-content: center;
+    width: 110px;
+    height: 40px;
+    background-color: #166678;
     display: flex;
     margin-top: auto;
     margin-bottom: auto;
     cursor: pointer;
-    justify-content: space-between;
+    border-radius: 6px;
+    align-self: flex-end;
 }
 
 .edit-conf p{
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 600;
-}
+    align-self: center;
+    color: #FFF;
+}    
 
 .button-save-budget-container{
     display: flex;
@@ -97,13 +99,15 @@
 .button-show{
     margin-top: 1rem;
     border: none;
-    background-color: #166678;
+    background-color: transparent;
     width: 110px;
     color: white;
     font-size: 12px;
     height: 40px;
-    border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
+    color: #ff0000;
+    border:  solid 2px #ff0000;
+    border-radius: 6px;
     align-self: flex-end;
 }
