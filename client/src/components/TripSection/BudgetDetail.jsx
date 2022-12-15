@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './BudgetDetail.style.css'
 import close from '../../assets/close.svg'
 import dollar from '../../assets/cash-out.svg'
 import notes from '../../assets/notes_icon.svg'
 
-const BudgetDetail = (props) => {
-	const { setState } = props
+const BudgetDetail = ({ setState, setBudget }) => {
+	const [ message, setError ] = useState('')
+	const [ inputBudget, setInputBudget ] = useState(0)
+	const [ select, setSelect ] = useState(null)
+
+	const valdiate = () => {
+		if (inputBudget <= 0 && select === null) {
+			setError("Fill all the form first please!")
+			return
+		}
+		setError("")
+		setState(false)
+		setBudget(prevItem => [ ...prevItem, { to:select,expenses:inputBudget } ])
+	}
 	return (
 		<div className="modal-container">
 			<div className="modal-budget-detail">
@@ -17,21 +29,22 @@ const BudgetDetail = (props) => {
 				<div className="modal-budget-content">
 					<div className="input-budget">
 						<label htmlFor="cash"><img src={dollar} alt="Dolar"/></label>
-						<input type="number" id="cash" placeholder="Input Budget"/>
+						<input onChange={(e) => setInputBudget(e.target.value)} type="number" id="cash" placeholder="Input Budget"/>
 					</div>
 					<div className="input-budget">
 						<label><img src={notes} alt="Dolar"/></label>
-						<select className="select-budget" name="budget-expend" id="budget">
-							<option value="" disabled selected hidden>Please choose...</option>
-							<option value="1"><span role="img" aria-labelledby="img-hotel">🏩</span> Hotel</option>
-							<option value="2"><span role="img" aria-labelledby="img-transport">🚌</span> Transportation</option>
-							<option value="3"><span role="img" aria-labelledby="img-food">🍴</span> Food</option>
-							<option value="4"><span role="img" aria-labelledby="img-shopping">🛍️</span> Shopping</option>
-							<option value="5"><span role="img" aria-labelledby="img-other">🎗️</span> Other</option>
+						<select onChange={(e) => setSelect(e.target.value)} className="select-budget" name="budget-expend" id="budget">
+							<option value="Empty" disabled selected hidden>Please choose...</option>
+							<option value="🏩 Hotel"><span role="img" aria-labelledby="img-hotel">🏩</span> Hotel</option>
+							<option value="🚌 Transportation"><span role="img" aria-labelledby="img-transport">🚌</span> Transportation</option>
+							<option value="🍴 Food"><span role="img" aria-labelledby="img-food">🍴</span> Food</option>
+							<option value="🛍️ Shopping"><span role="img" aria-labelledby="img-shopping">🛍️</span> Shopping</option>
+							<option value="🎗️ Other"><span role="img" aria-labelledby="img-other">🎗️</span> Other</option>
 						</select>
 					</div>
+					<p>{message}</p>
 				</div>
-				<button onClick={() => setState(false)}>Save</button>
+				<button onClick={valdiate}>Save</button>
 			</div>
 		</div>
 	)

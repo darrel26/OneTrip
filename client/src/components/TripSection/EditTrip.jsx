@@ -15,11 +15,13 @@ import BudgetDetail from './BudgetDetail';
 
 const EditTrip = ({ center }) => {
 	// eslint-disable-next-line
-  const [dataTrip , setDataTrip] = useState(placeVisit)
+  	const [dataTrip , setDataTrip] = useState(placeVisit)
 	const [ isOpen, setIsOpen ] = useState(true)
 	const [ isOpenBudget, setIsOpenBudget ] = useState(true)
-  const [ openBudgetDetail, setOpenBudgetDetail ] = useState(false)
+	const [ openBudgetDetail, setOpenBudgetDetail ] = useState(false)
 	const [ placeInput, setPlaceInput ] = useState()
+	const [ budgetList, setBudgetList ] = useState([])
+	const [ budget, setBudget ] = useState(0)
 	let dataInput = useRef()
 	// trip data 
 	const [ tripData, setTripData ] = useState([])
@@ -118,7 +120,6 @@ const EditTrip = ({ center }) => {
 						<h4>ADD PLACE</h4>
 						<img src={plus} alt="Plus Icon"/>
 					</div>
-					<button onClick={() => setOpenBudgetDetail(!openBudgetDetail)}>ADD EXPENSES</button>
 				</div>
 
 				<div className="accordion">
@@ -127,16 +128,16 @@ const EditTrip = ({ center }) => {
 							<img className="toggle" src={chevron} alt="chevron icon" aria-expanded={isOpenBudget}/>
 							<h1 className="title">Budgetting</h1>
 						</div>
-						<button>ADD EXPENSES</button>
+						<button onClick={() => setOpenBudgetDetail(true)}>ADD EXPENSES</button>
 					</div>
 					<div className="accordion-content" aria-expanded={!isOpenBudget}>
-						<Budget value={dataTrip.budgetData.targetBudget}/>
-						<BudgetList data={dataTrip.budgetData.budgetDetail}/>
+						<Budget value={budget} setValue={setBudget}/>
+						<BudgetList data={budgetList}/>
 					</div>
 				</div>
 			</div>
 			{openBudgetDetail&& (
-				<BudgetDetail setState={setOpenBudgetDetail}/>
+				<BudgetDetail setState={setOpenBudgetDetail} setBudget={setBudgetList}/>
 			)}
 		</div>
 	)

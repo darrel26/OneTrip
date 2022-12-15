@@ -1,3 +1,5 @@
+
+
 .budget-container{
     display: flex;
     background-color: #eaeaea;
@@ -16,18 +18,47 @@
     margin-left: 30px;
 }
 
+.button-show{
+    border: none;
+    background-color: #166678;
+    width: 70px;
+    color: white;
+    font-size: 14px;
+    height: 40px;
+    align-self: center;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: auto;
+    font-weight: 600;
+}
+
+.button-hide{
+    display: none;
+}
+
+
 .value{
     display: flex;
     margin-top: auto;
     margin-bottom: auto;
     border-bottom: solid 4px #c8c7c7;
-    width: 70%;
+    width: 75%;
 }
 
+#edits{
+    border: none;
+    outline: none;
+    font-size: 30px;
+    background-color: transparent;
+    width: inherit;
+}
+
+
+
 .value h1{
-    margin-bottom: 7px;
     font-size: 24px;
     font-weight: 500;
+    align-self: center;
 
 }
 

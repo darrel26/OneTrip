@@ -77,3 +77,9 @@ input::-webkit-inner-spin-button {
     border: none;
     cursor: pointer;
 }
+
+.modal-budget-detail p{
+    font-size: 11px;
+    text-align: center;
+    color: red;
+}
