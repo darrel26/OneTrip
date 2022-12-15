@@ -1,4 +1,7 @@
-
+.budget-mainContainer{
+    display: flex;
+    flex-direction: column;
+}
 
 .budget-container{
     display: flex;
@@ -6,7 +9,6 @@
     height: 111px;
     border-radius: 15px;
     padding: 10px;
-    margin-bottom: 30px;
 }
 
 .value-container{
@@ -18,18 +20,11 @@
     margin-left: 30px;
 }
 
-.button-show{
-    border: none;
-    background-color: #166678;
-    width: 70px;
-    color: white;
-    font-size: 14px;
-    height: 40px;
+
+
+.save-budget-icon{
+    width: 20px;
     align-self: center;
-    border-radius: 6px;
-    cursor: pointer;
-    margin: auto;
-    font-weight: 600;
 }
 
 .button-hide{
@@ -80,15 +75,35 @@
 }
 
 .edit-conf{
+    width: 80%;
     display: flex;
     margin-top: auto;
     margin-bottom: auto;
     cursor: pointer;
-    padding: 10px;
+    justify-content: space-between;
 }
 
 .edit-conf p{
     font-size: 15px;
-    margin-left: 20px;
     font-weight: 600;
+}
+
+.button-save-budget-container{
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.button-show{
+    margin-top: 1rem;
+    border: none;
+    background-color: #166678;
+    width: 110px;
+    color: white;
+    font-size: 12px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    align-self: flex-end;
 }
