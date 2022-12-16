@@ -11,6 +11,12 @@ const tripSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    tripDate: [
+        {
+            startDate: String,
+            endDate: String,
+        },
+    ],
     places: [
         {
             type: Object,
@@ -25,7 +31,7 @@ const tripSchema = new mongoose.Schema({
     },
     expenses: [
         {
-            category: String,
+            type: String,
             amount: Number,
         },
     ],
@@ -38,3 +44,7 @@ tripSchema.set('toJSON', {
         delete returnedObject.__v;
     },
 });
+
+const Trip = new mongoose.model('Trip', tripSchema);
+
+module.exports = Trip;
