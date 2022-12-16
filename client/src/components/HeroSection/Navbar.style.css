@@ -50,7 +50,10 @@
 
 .drop-down-menu{
   position: relative;
-  display: inline-block;
+}
+
+.drop-down-menu h1{
+  font-size: 30px;
 }
 
 .drop-down-content{
@@ -73,6 +76,7 @@
   transition: all 0.3s ease;
   color: #000;
   padding: 12px;
+  font-weight: 500;
 }
 
 .link-nav:hover{
