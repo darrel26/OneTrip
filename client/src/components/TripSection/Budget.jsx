@@ -1,24 +1,28 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import './Budget.style.css'
-import Dolar from '../../assets/Dolar-icon.svg'
-import Setting from '../../assets/Settings.svg'
 
-const Budget = ({ value }) => {
+const Budget = ({ value, setValue }) => {
+	const editbudget = useRef()
+	const [ edtitable, setEditable ] = useState(true)
 	return (
 		<div className="budget-container">
 			<div className="value-container">
 				<div className="value">
-					<img id="dolarIcon" src={Dolar} alt="Dolar icon"/>
-					<h1><span id="IDR">IDR</span> {value}</h1>
+					<h1>IDR</h1>
+					<input ref={editbudget} id="edits" disabled={edtitable} type="number" defaultValue={value}/>
 				</div>
 			</div>
 			<div className="edit-budget">
-				<div className="edit-conf">
-					<img src={Setting} alt="setting icon"/>
-					<p>Edit Budget</p>
-				</div>
+				<label htmlFor="edits" onClick={() => setEditable(!edtitable)} className="edit-conf">
+					<p>EDIT BUDGET</p>
+				</label>
+				<button onClick={() => {
+					setValue(editbudget.current.value)
+					setEditable(true)
+				}} className={edtitable === true ? "button-hide" : "button-show"}>SAVE</button>
 			</div>
 		</div>
+		
 	)
 }
 

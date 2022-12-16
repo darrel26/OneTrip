@@ -1,33 +1,56 @@
+
 .budget-container{
+    width: 100%;
     display: flex;
-    background-color: #eaeaea;
-    height: 111px;
     border-radius: 15px;
-    padding: 10px;
-    margin-bottom: 30px;
+    
+
 }
 
 .value-container{
+    width: 100%;
+    border-radius: 6px;
+    padding: 14px;
+    background-color: #eaeaea;
     display: flex;
     align-self: center;
-    width: 70%;
     height: 90px;
-    border-right: solid 2px #c8c7c7;
-    margin-left: 30px;
 }
+
+
+
+.save-budget-icon{
+    width: 20px;
+    align-self: center;
+}
+
+.button-hide{
+    display: none;
+}
+
 
 .value{
     display: flex;
     margin-top: auto;
     margin-bottom: auto;
     border-bottom: solid 4px #c8c7c7;
-    width: 70%;
+    width: 75%;
 }
 
+#edits{
+    border: none;
+    outline: none;
+    font-size: 30px;
+    background-color: transparent;
+    width: inherit;
+}
+
+
+
 .value h1{
-    margin-bottom: 7px;
+    margin-right: 10px;
     font-size: 24px;
-    font-weight: 500;
+    align-self: center;
 
 }
 
@@ -44,20 +67,47 @@
     width: 30%;
     height: 90px;
     margin-left: 30px;
-
-
 }
 
 .edit-conf{
     display: flex;
+    justify-content: center;
+    width: 180px;
+    height: 40px;
+    background-color: #166678;
+    display: flex;
     margin-top: auto;
     margin-bottom: auto;
     cursor: pointer;
-    padding: 10px;
+    border-radius: 6px;
+    align-self: flex-end;
 }
 
 .edit-conf p{
-    font-size: 15px;
-    margin-left: 20px;
+    font-size: 12px;
     font-weight: 600;
+    align-self: center;
+    color: #FFF;
+}    
+
+.button-save-budget-container{
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.button-show{
+    margin-top: 1rem;
+    border: none;
+    background-color: transparent;
+    width: 180px;
+    color: white;
+    font-size: 12px;
+    height: 40px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #ff0000;
+    border:  solid 2px #ff0000;
+    border-radius: 6px;
+    align-self: flex-end;
 }

@@ -1,7 +1,7 @@
 .table-budget{
+    height: auto;
     border-collapse: collapse;
-    width: 85%;
-    margin-bottom: 30px;
+    width: 74%;
 }
 
 .budget{
@@ -25,3 +25,4 @@
   padding-bottom: 8px;
   width: 20%;
 }
+
