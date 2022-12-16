@@ -47,3 +47,36 @@
   cursor: pointer;
   width: 50px;
 }
+
+.drop-down-menu{
+  position: relative;
+  display: inline-block;
+}
+
+.drop-down-content{
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.drop-down-menu:hover .drop-down-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.link-nav{
+  text-decoration: none;
+  transition: all 0.3s ease;
+  color: #000;
+  padding: 12px;
+}
+
+.link-nav:hover{
+  background-color: #166678;
+  border-radius: 5px;
+  color: #FFF;
+}
