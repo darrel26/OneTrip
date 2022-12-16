@@ -15,10 +15,12 @@ import BudgetDetail from './BudgetDetail';
 
 const EditTrip = ({ center }) => {
 	// eslint-disable-next-line
-  const [ dataTrip , setDataTrip ] = useState(placeVisit)
+  	const [ dataTrip , setDataTrip ] = useState(placeVisit)
 	const [ isOpen, setIsOpen ] = useState(true)
 	const [ isOpenBudget, setIsOpenBudget ] = useState(true)
 	const [ openBudgetDetail, setOpenBudgetDetail ] = useState(false)
+	const [ budgetList, setBudgetList ] = useState([])
+	const [ budget, setBudget ] = useState(0)
 	// trip data 
 	let dataInput = useRef()
 	const [ placeInput, setPlaceInput ] = useState()

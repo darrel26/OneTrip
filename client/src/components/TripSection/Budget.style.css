@@ -72,7 +72,7 @@
 .edit-conf{
     display: flex;
     justify-content: center;
-    width: 110px;
+    width: 180px;
     height: 40px;
     background-color: #166678;
     display: flex;
@@ -100,7 +100,7 @@
     margin-top: 1rem;
     border: none;
     background-color: transparent;
-    width: 110px;
+    width: 180px;
     color: white;
     font-size: 12px;
     height: 40px;
