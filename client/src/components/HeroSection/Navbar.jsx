@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.style.css';
 import OneTrip from '../Logo/OneTrip';
 import Modal from '../Modals/Modal';
@@ -8,16 +8,22 @@ import axios from 'axios';
 import getCookie from '../../utils/cookies';
 import { errorAlert } from '../../utils/notificationAlert';
 
-const Navbar = ({ heroSectionId, featureSectionid, aboutUsid }) => {
+const Navbar = ({
+	heroSectionId,
+	featureSectionid,
+	aboutUsid,
+	loginStatus,
+	setLoginStatus,
+	username,
+	setUsername,
+}) => {
 	const [ modal, setModal ] = useState(false);
 	const [ section, setSection ] = useState(null);
-	const [ loginStatus, setLoginStatus ] = useState(false);
-	const [ userData, setDataUser ] = useState(null)
 
 	const viewProfile = async () => {
 		const authToken = getCookie('token');
 		const userId = getCookie('userId');
-    
+
 		const request = axios.get(
 			`${process.env.REACT_APP_BASE_URL}/users/${userId}`,
 			{
@@ -26,20 +32,16 @@ const Navbar = ({ heroSectionId, featureSectionid, aboutUsid }) => {
 				},
 			}
 		);
-    
+
 		await request
-			.then(result => {
-				setDataUser(result.data)
+			.then((result) => {
+				console.log(result);
 			})
-			.catch(error => {
+			.catch((error) => {
 				const { status, message } = error.response.data.error;
 				errorAlert(status, message).then(() => window.location.reload());
-			});	
+			});
 	};
-
-	useEffect(() => {
-		viewProfile()
-	},[ loginStatus ])
 
 	return (
 		<div className="herosection-nav">
@@ -53,10 +55,14 @@ const Navbar = ({ heroSectionId, featureSectionid, aboutUsid }) => {
 				<div className="herosection-user">
 					<img src={userIcon} alt="user-icon" onClick={viewProfile}></img>
 					<div className="drop-down-menu">
-						<h1>{userData.username}</h1>
+						<h1>{username}</h1>
 						<div className="drop-down-content">
-							<Link className="link-nav" to="#">Profile</Link>
-							<Link className="link-nav" to="#">Log Out</Link>
+							<Link className="link-nav" to="#">
+                Profile
+							</Link>
+							<Link className="link-nav" to="#">
+                Log Out
+							</Link>
 						</div>
 					</div>
 				</div>
@@ -84,6 +90,7 @@ const Navbar = ({ heroSectionId, featureSectionid, aboutUsid }) => {
 							setModal={setModal}
 							sections={section}
 							setLoginStatus={setLoginStatus}
+							setUsername={setUsername}
 						/>
 					)}
 				</div>
