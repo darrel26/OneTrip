@@ -26,9 +26,8 @@
 
 .trip-title button{
     margin-top: auto;
-    width: 175px;
+    width: 180px;
     height: 50px;
-    align-self: center;
     border: none;
     background-color: #166678;
     font-weight: 600;
@@ -77,25 +76,25 @@
     margin-top: 40px;
     font-size: 18px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
 .accordion-title-budget button{
-    font-size: 12px;
-    font-weight: bold;
-    width: 110px;
-    height: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    width: 180px;
+    height: 50px;
     border: none;
     background-color: #166678;
     color: white;
-    border-radius: 10px;
+    border-radius: 7px;
     cursor: pointer;
 }
 
 .budget-title{
     cursor: pointer;
     display: flex;
-    width: 80%;
 }
 
 .title{
@@ -126,47 +125,44 @@
 }
 
 .add-place-container{
-    height: 55px;
+    margin-top: 10px;
+    height: 50px;
     display: flex;
+    justify-content: space-between;
 }
 
 .add-place-input{
     display: flex;
     background-color: #eaeaea;
     width: 75%;
-    border-radius: 8px;
-
+    border-radius: 7px;
 }
 
 .add-place-input label{
     display: flex;
-    width: 15%;
+    width: 50px;
     align-items: center;
     justify-content: center;
 }
 
 .add-place-input img{
+    width: 35%;
     position: relative;
     filter: invert(44%) sepia(35%) saturate(1125%) hue-rotate(314deg) brightness(91%) contrast(103%);
 }
 
 .add-place-button{
-    width: 25%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: #166678;
     color: #FFF;
-    margin-left: 20px;
-    border-radius: 5px;
+    border-radius: 7px;
     cursor: pointer;
-    height: 55px;
+    width: 180px;
 }
 .add-place-button h4{
-    margin-top: auto;
-    margin-bottom: auto;
     align-self: center;
-    margin-left: 15px;
-
+    font-size: 14px;
 }
 
 .add-place-button img{
@@ -189,7 +185,7 @@
     width: 95%;
     border: none;
     outline: none;
-    border-radius: 8px;
+    border-radius: 7px;
     font-size: 15px;
     font-weight: 600;
 }
