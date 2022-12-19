@@ -42,6 +42,7 @@ const EditTrip = ({ center }) => {
 			])
 		dataInput.current.value = ""
 	}
+	
 
 	return (
 		<div className="edit-trip-container">
