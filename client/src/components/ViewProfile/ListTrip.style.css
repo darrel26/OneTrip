@@ -1,0 +1,9 @@
+.list-trip-container{
+    height: 90vh;
+    width: 70%;
+    display: flex;
+    align-self: flex-end;
+    flex-direction: column;
+    margin: auto;
+    align-self: center;
+}

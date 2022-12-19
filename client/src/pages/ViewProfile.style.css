@@ -13,4 +13,6 @@
 .list-trip-section{
     width: 50%;
     background-color: #166678;
+    position: relative;
+    display: flex;
 }

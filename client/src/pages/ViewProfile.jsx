@@ -1,4 +1,5 @@
 import React from 'react'
+import ListTrip from '../components/ViewProfile/ListTrip'
 import ProfileSection from '../components/ViewProfile/ProfileSection'
 import './ViewProfile.style.css'
 const ViewProfile = () => {
@@ -8,7 +9,7 @@ const ViewProfile = () => {
 				<ProfileSection/>
 			</div>
 			<div className="list-trip-section">
-				<p>Fake</p>
+				<ListTrip/>
 			</div>
 		</div>
 	)
