@@ -3,7 +3,7 @@ import { succesToast, errorAlert } from '../../../utils/notificationAlert';
 import axios from 'axios';
 import './Section.style.css';
 
-const SectionLogin = ({ section, setLoginStatus }) => {
+const SectionLogin = ({ section, setLoginStatus, setUsername }) => {
 	const login_username_email = useRef();
 	const login_pass = useRef();
 
@@ -19,11 +19,12 @@ const SectionLogin = ({ section, setLoginStatus }) => {
 			`${process.env.REACT_APP_BASE_URL}/users/login`,
 			userCredential
 		);
-    
+
 		await request
 			.then(({ data }) => {
-				const { id, authToken, message } = data;
-				document.cookie = `userId=${id}`;
+				const { username, userId, authToken, message } = data;
+				setUsername(username);
+				document.cookie = `userId=${userId}`;
 				document.cookie = `token=${authToken}`;
 				setLoginStatus(true);
 				succesToast(message);
@@ -34,23 +35,23 @@ const SectionLogin = ({ section, setLoginStatus }) => {
 			});
 	};
 
-
 	return (
 		<form onSubmit={login}>
 			<div className="modal-body">
 				<label>Email</label>
-				<input minLength="6"
+				<input
+					minLength="6"
 					autoComplete="off"
-					type="email" 
-					ref={login_username_email} 
+					type="email"
+					ref={login_username_email}
 					required
 				/>
 				<label>Password</label>
-				<input 
-					minLength="6" 
-					autoComplete="off" 
-					type="password" 
-					ref={login_pass}  
+				<input
+					minLength="6"
+					autoComplete="off"
+					type="password"
+					ref={login_pass}
 					placeholder="password"
 					required
 				/>
@@ -59,9 +60,16 @@ const SectionLogin = ({ section, setLoginStatus }) => {
 				<button>Login</button>
 			</div>
 			<div className={`modal-footer`}>
-				<p>Don't have an account? <span onClick={() => {
-					section('signup')
-				}}>Register Here</span></p>
+				<p>
+          Don't have an account?{' '}
+					<span
+						onClick={() => {
+							section('signup');
+						}}
+					>
+            Register Here
+					</span>
+				</p>
 			</div>
 		</form>
 	);
