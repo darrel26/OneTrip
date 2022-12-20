@@ -1,39 +1,45 @@
-import React from 'react'
+/* eslint-disable no-undef */
+import React, { useState } from 'react'
 import './TripPage.style.css'
 import GoogleMap from '../components/GoogleMapSection/GoogleMapSection'
 import NavbarTrip from '../components/TripSection/NavbarTrip'
 import EditTrip from '../components/TripSection/EditTrip'
 
-let placeServices;
-let geocoder;
-let directionServices;
-let directionsRenderer;
-let pos;
-
 const TripPage = () => {
+	const [ tripPlace, setTripPlace ] = useState([])
+	const [ nearbyPlaces, setNearbyPlaces ] = useState([])
+	let placeServices;
 
 	const center = {
 		lat: -6.914864,
 		lng: 107.608238
 	};
 
+	const getPlaceRecomendations = (location) => {
+		return {
+			location,
+			radius: '500',
+			query: 'places',
+			fields: [ "name", "photos", "place_id", "rating" ]
+		}
+	}
+
 	const onLoad = (map) => {
-		geocoder = new google.maps.Geocoder();
-		directionServices = new google.maps.DirectionsService();
-		directionsRenderer = new google.maps.DirectionsRenderer({
-			preserveViewport: true,
-			suppressMarkers: true,
-		});
+		placeServices = new google.maps.places.PlacesService(map);
+		placeServices.textSearch(getPlaceRecomendations(center), (response) => {
+			setNearbyPlaces(response)
+			console.log(response);
+		})
 	}
 
 	return (
 		<div className="trippage-maincontainer">
 			<div className="trippage-container-left">
 				<NavbarTrip/>
-				<EditTrip center={center}/>
+				<EditTrip center={center} nearby={nearbyPlaces} tripData={tripPlace} setTripData={setTripPlace}/>
 			</div>
 			<div className="trippage-container-right">
-				<GoogleMap mapCenter={center} onMapLoad={onLoad}/>
+				<GoogleMap mapCenter={center} onMapLoad={onLoad} tripPlace={tripPlace} setTriPlace={setTripPlace}/>
 			</div> 
 		</div>
 	)
