@@ -189,3 +189,62 @@
     font-size: 15px;
     font-weight: 600;
 }
+
+.nearby-search-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    overflow: auto;
+    white-space:nowrap;
+}
+
+.nearby-cards{
+    display: flex;
+    margin: 10px;
+    border: dashed 2px #333;
+    justify-items: center;
+    border-radius: 5px;
+    padding: 2px;
+    justify-content: space-between;
+}
+
+.nearby-cards img{
+    width: 60px;
+    height: 60px;
+    
+}
+
+.edit-trip-container h5{
+    margin-left: 12px;
+}
+
+.nearby-cards p{
+    align-self: center;
+    font-weight: 600;
+    font-size: 13px;
+    margin: 0px 10px;
+}
+
+.nearby-cards button{
+    width: 50px;
+    height: 50px;
+    align-self: center;
+    background-color: #166678;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.nearby-cards button img{
+    width: 20px;
+    height: 20px;
+    filter: invert(100%) sepia(0%) saturate(7464%) hue-rotate(99deg) brightness(101%) contrast(105%);
+}
+
+#No-PIC{
+    background-color: #166678;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+}

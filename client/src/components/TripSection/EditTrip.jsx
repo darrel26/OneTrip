@@ -5,6 +5,8 @@ import chevron from '../../assets/Chevron-icon.svg'
 import gps from '../../assets/gps.svg'
 import plus from '../../assets/plus.svg'
 import calendar from '../../assets/Calendar-icon-trip.svg'
+import noImage from '../../assets/no-image.svg'
+
 import { placeVisit } from '../../DummyData'
 
 import './EditTrip.style.css'
@@ -13,7 +15,7 @@ import Budget from './Budget'
 import BudgetList from './BudgetList';
 import BudgetDetail from './BudgetDetail';
 
-const EditTrip = ({ center }) => {
+const EditTrip = ({ center, nearby, tripData, setTripData }) => {
 	// eslint-disable-next-line
   	const [ dataTrip , setDataTrip ] = useState(placeVisit)
 	const [ isOpen, setIsOpen ] = useState(true)
@@ -24,7 +26,6 @@ const EditTrip = ({ center }) => {
 	// trip data 
 	let dataInput = useRef()
 	const [ placeInput, setPlaceInput ] = useState()
-	const [ tripData, setTripData ] = useState([])
 	const [ placeDetail, setPlaceDetail ] = useState()
 
 	const getPlaceDetail = () => {
@@ -42,6 +43,7 @@ const EditTrip = ({ center }) => {
 			])
 		dataInput.current.value = ""
 	}
+	
 
 	return (
 		<div className="edit-trip-container">
@@ -65,16 +67,21 @@ const EditTrip = ({ center }) => {
 						{
 							tripData.map(({ place_id, photos, formatted_address, name, rating }, index) => {
 								return <PlacePreview 
-									key={place_id} 
-									placeImg={photos[0].getUrl()} 
+									key={index} 
+									placeImg=
+										{
+											photos === undefined ? 
+												<p>Error</p>: photos[0].getUrl()
+										} 
 									index={index} 
 									placeDesc={formatted_address} 
 									placeName={name} 
 									rating={rating} />
 							}) 
 						}
-					</div>
+					</div>	
 				</div>
+				
 
 				<div className="add-place-container">
 					<div className="add-place-input">
@@ -110,6 +117,21 @@ const EditTrip = ({ center }) => {
 						<h4>ADD PLACE</h4>
 						<img src={plus} alt="Plus Icon"/>
 					</div>
+				</div>
+				<br/>
+				<h5>Recomendation Places :</h5>
+				<div className="nearby-search-container">
+					
+					{nearby.slice(0, 6).map((item,index) => (
+						<div key={index} className="nearby-cards">
+							{item.photos === undefined ? <img src={noImage} id="No-PIC" alt="No-pic"/> : <img src={item.photos[0].getUrl()} alt="Nearby"/>}
+							<p>{item.name}</p>
+							<button onClick={() => {
+								setTripData([ ...tripData, item ])
+								console.log(tripData)
+							}}><img src={plus} alt="plus"/></button>
+						</div>
+					))}
 				</div>
 
 				<div className="accordion">
