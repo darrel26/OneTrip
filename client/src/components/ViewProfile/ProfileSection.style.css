@@ -1,0 +1,77 @@
+.profile-section-container{
+    height: 90vh;
+    width: 70%;
+    display: flex;
+    align-self: flex-end;
+    flex-direction: column;
+    margin: auto;
+    align-self: center;
+}
+
+.profile-save-section{
+    display: flex;
+    width: 90%;
+    height: 40vh;
+    justify-content: space-between;
+}
+
+.profile-save-section img{
+    width: 200px;
+}
+
+.profile-button{
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: space-evenly;
+}
+
+.profile-button button{
+    width: 200px;
+    height: 54px;
+    background-color: #166678;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #FFF;
+    font-weight: 600;
+    font-size: 15px;    
+
+}
+
+#save-profile{
+    background-color: transparent;
+    border: solid 2px red;
+    color: red;
+}
+
+.user-information{
+    display: flex;
+    flex-direction: column;
+    height: 10vh;
+    justify-content: space-between;
+}
+
+.user-information-section{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 35vh;
+    justify-content: space-between;
+
+}
+
+.user-information label{
+    color: #166678;
+    font-weight: 600;
+}
+
+.user-information input{
+    border: solid 2px #eaeaea;
+    border-radius: 6px;
+    outline: none;
+    height: 50px;
+    width: 100%;
+    padding-left: 3%;
+}

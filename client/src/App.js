@@ -4,6 +4,7 @@ import { useJsApiLoader } from "@react-google-maps/api"
 import HomePage from './pages/HomePage'
 import './App.css'
 import TripPage from './pages/TripPage'
+import ViewProfile from './pages/ViewProfile'
 
 const library = [ 'places' ]
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
       		<Routes>
       			<Route path="/" element={<HomePage/>} />
       			<Route path="/trip" element={<TripPage/>} />
+      			<Route path="/profile" element={<ViewProfile/>} />
       		</Routes>
       	</Router>:
       	loadError
