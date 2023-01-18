@@ -25,11 +25,18 @@ router.post('/add-trip', authenticateToken, async (req, res, next) => {
         user: user._id,
     });
 
-    const savedTrip = await trip.save();
-    user.trips = user.trips.concat(savedTrip._id);
-    await user.save();
-
-    res.status(201).json(savedTrip);
+    try {
+        const savedTrip = await trip.save();
+        user.trips = user.trips.concat(savedTrip._id);
+        await user.save();
+        res.status(201).json({
+            userData: savedTrip,
+            message: 'Trip Added Successfully!',
+        });
+    } catch (error) {
+        error.status = 403;
+        next(error);
+    }
 });
 
 module.exports = router;

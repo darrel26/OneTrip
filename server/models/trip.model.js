@@ -19,7 +19,11 @@ const tripSchema = new mongoose.Schema({
             type: String,
         },
     },
-    places: [],
+    places: [
+        {
+            type: Object,
+        },
+    ],
     budget: {
         type: Number,
     },
