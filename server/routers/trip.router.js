@@ -9,6 +9,17 @@ router.get('/', authenticateToken, async (req, res) => {
     res.json(trips);
 });
 
+router.get('/:id', authenticateToken, async (req, res) => {
+    const { id } = req.params;
+    const trip = await Trip.findById(id);
+
+    if (trip) {
+        res.status(200).json(trip);
+    } else {
+        res.status(404).end();
+    }
+});
+
 router.post('/add-trip', authenticateToken, async (req, res, next) => {
     const {
         title, basedLocation, tripDate, places, budget, expenses,
