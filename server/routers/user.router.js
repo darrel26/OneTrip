@@ -21,6 +21,34 @@ router.get('/:id', authenticateToken, async (req, res) => {
     }
 });
 
+router.put('/:id', authenticateToken, async (req, res, next) => {
+    const { id } = req.params;
+    const { username, email } = req.body;
+
+    const isUsernameExist = await User.findOne({ username });
+    const isEmailExist = await User.findOne({ email });
+
+    if (isUsernameExist && isEmailExist) {
+        const duplicateError = new Error(`${username} already taken!`);
+        duplicateError.status = 400;
+        next(duplicateError);
+        return;
+    }
+
+    try {
+        const newUserData = await User.findByIdAndUpdate(
+            id,
+            { username, email },
+            { new: true, runValidators: true, context: 'query' },
+        );
+        res.status(204).json(newUserData);
+    } catch (error) {
+        const validationError = new Error('email or username cannot be empty!');
+        validationError.status = 400;
+        next(validationError);
+    }
+});
+
 router.post('/register', async (req, res, next) => {
     const { email, username, password } = req.body;
 
@@ -78,6 +106,8 @@ router.post('/login', async (req, res, next) => {
     res.json({
         username: user.username,
         userId: user._id,
+        email: user.email,
+        createdAt: user.createdAt,
         authToken,
         message: 'Login Success!',
     });
