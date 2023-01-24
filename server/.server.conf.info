@@ -4,7 +4,7 @@ MONGODB_username = onetrip
 MONGODB_password = gc3HJNPHdewtG64j
 MONGODB_URI_PROD = mongodb+srv://onetrip:gc3HJNPHdewtG64j@cluster0.c8gr7gl.mongodb.net/OneTrip?retryWrites=true&w=majority
 MONGODB_URI_DEV = mongodb+srv://onetrip:gc3HJNPHdewtG64j@cluster0.c8gr7gl.mongodb.net/OneTrip_Dev?retryWrites=true&w=majority
-PORT = 3001 
+PORT = 5000 
 
 NODE_ENV = DEV
 
