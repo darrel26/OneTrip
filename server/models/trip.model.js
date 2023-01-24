@@ -9,7 +9,7 @@ const tripSchema = new mongoose.Schema({
     },
     basedLocation: {
         type: Object,
-        required: true,
+        required: [true, 'Based Location cannot be empty!'],
     },
     tripDate: {
         startDate: {

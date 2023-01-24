@@ -50,4 +50,35 @@ router.post('/add-trip', authenticateToken, async (req, res, next) => {
     }
 });
 
+router.put('/edit-trip/:id', authenticateToken, async (req, res, next) => {
+    const { id } = req.params;
+    const {
+        title, basedLocation, tripDate, places, budget, expenses,
+    } = req.body;
+
+    const isTripExist = await Trip.findById(id);
+
+    if (!isTripExist) {
+        const tripNotFoundError = new Error(`Trip with id ${id} doesn't exist`);
+        tripNotFoundError.status = 404;
+        next(tripNotFoundError);
+        return;
+    }
+
+    try {
+        const newTripData = await Trip.findByIdAndUpdate(
+            id,
+            {
+                title, basedLocation, tripDate, places, budget, expenses,
+            },
+            { new: true, runValidators: true, context: 'query' },
+        );
+        res.status(204).json(newTripData);
+    } catch (error) {
+        const validationError = new Error('Trip Validation Error');
+        validationError.status = 400;
+        next(validationError);
+    }
+});
+
 module.exports = router;
