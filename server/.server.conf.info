@@ -1,0 +1,11 @@
+# Database
+
+MONGODB_username = onetrip
+MONGODB_password = gc3HJNPHdewtG64j
+MONGODB_URI_PROD = mongodb+srv://onetrip:gc3HJNPHdewtG64j@cluster0.c8gr7gl.mongodb.net/OneTrip?retryWrites=true&w=majority
+MONGODB_URI_DEV = mongodb+srv://onetrip:gc3HJNPHdewtG64j@cluster0.c8gr7gl.mongodb.net/OneTrip_Dev?retryWrites=true&w=majority
+PORT = 3001 
+
+NODE_ENV = DEV
+
+TOKEN_SECRET = 2fbba3963c541bfe52e59126ae140c92156f6f8930aba8f0d95777b740b5bee817679283a833e10ecf76a1e1b6bf8030bd6b8dadc6d1b78548763547de9265ff
