@@ -29,7 +29,12 @@ const tripSchema = new mongoose.Schema({
     },
     expenses: [
         {
-            type: Object,
+            category: {
+                type: String,
+            },
+            amount: {
+                type: Number,
+            },
         },
     ],
     user: {
